@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Технические работы | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    html, body { height: 100%; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .maint-bg-glow {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .maint-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .maint-logo-mark {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #fff 0%, #888 100%);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #000; font-weight: 800; font-size: 16px;
+    }
+
+    .maint-visual {
+      position: relative;
+      width: 100px; height: 100px;
+      margin: 0 auto 32px;
+      z-index: 1;
+    }
+
+    .maint-circle {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 38px;
+      background: var(--bg-card);
+      position: relative;
+      z-index: 1;
+    }
+
+    .maint-ring {
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      animation: spin 8s linear infinite;
+    }
+
+    .maint-ring::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: 50%;
+      transform: translateX(-50%);
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--text-secondary);
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .maint-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: rgba(251,191,36,.1);
+      border: 1px solid rgba(251,191,36,.22);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .maint-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #fbbf24;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .maint-title {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .maint-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 480px;
+      line-height: 1.75;
+      margin: 0 auto 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Progress */
+    .maint-progress {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mp-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .mp-track {
+      height: 5px;
+      background: var(--bg-card);
+      border-radius: 99px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .mp-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, rgba(255,255,255,.35), rgba(255,255,255,.85));
+      width: 0;
+      animation: fillProgress 3s ease-out forwards;
+    }
+
+    @keyframes fillProgress { to { width: 68%; } }
+
+    /* ETA */
+    .maint-eta {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eta-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 22px;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .eta-num  { font-size: 28px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
+    .eta-unit { font-size: 11px; color: var(--text-muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* Updates */
+    .maint-updates {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      max-width: 460px;
+      width: 100%;
+      margin: 0 auto 32px;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mu-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .mu-item {
+      display: flex;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .mu-item:last-child { border-bottom: none; }
+
+    .mu-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .mu-dot.done    { background: #4ade80; }
+    .mu-dot.active  { background: #fbbf24; animation: pulse 1s ease-in-out infinite; }
+    .mu-dot.pending { background: var(--text-muted); }
+
+    .mu-text { color: var(--text-secondary); line-height: 1.5; flex: 1; }
+    .mu-time { font-size: 11px; color: var(--text-muted); margin-left: auto; flex-shrink: 0; }
+
+    /* Notify */
+    .maint-notify {
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mn-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .mn-form { display: flex; gap: 8px; }
+
+    .mn-form input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: var(--text-primary);
+      font-family: var(--font);
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .mn-form input:focus { border-color: var(--border-hover); }
+    .mn-form input::placeholder { color: var(--text-muted); }
+
+    .maint-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      border-top: 1px solid var(--border);
+      background: rgba(8,8,8,.95);
+      backdrop-filter: blur(12px);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .mf-copy { font-size: 12px; color: var(--text-muted); }
+    .mf-links { display: flex; gap: 16px; }
+    .mf-links a { font-size: 12px; color: var(--text-muted); transition: color .2s; }
+    .mf-links a:hover { color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+
+  <div class="maint-bg-glow"></div>
+
+  <div class="maint-logo">
+    <div class="maint-logo-mark">W</div>
+    WELVERS
+  </div>
+
+  <div class="maint-visual">
+    <div class="maint-ring"></div>
+    <div class="maint-circle">⚙️</div>
+  </div>
+
+  <div class="maint-badge">
+    <span class="maint-dot"></span>
+    Технические работы
+  </div>
+
+  <h1 class="maint-title">Сайт временно недоступен</h1>
+
+  <p class="maint-desc">
+    Мы улучшаем WELVERS — обновляем базу инструментов, добавляем новые функции и оптимизируем скорость. Скоро вернёмся!
+  </p>
+
+  <div class="maint-progress">
+    <div class="mp-header">
+      <span>Прогресс обновления</span>
+      <span id="progressPct">68%</span>
+    </div>
+    <div class="mp-track">
+      <div class="mp-fill" id="mpFill"></div>
+    </div>
+  </div>
+
+  <div class="maint-eta">
+    <div class="eta-block"><div class="eta-num" id="etaH">02</div><div class="eta-unit">часа</div></div>
+    <div class="eta-block"><div class="eta-num" id="etaM">34</div><div class="eta-unit">минуты</div></div>
+    <div class="eta-block"><div class="eta-num" id="etaS">17</div><div class="eta-unit">секунды</div></div>
+  </div>
+
+  <div class="maint-updates">
+    <div class="mu-title">Журнал обновлений</div>
+    <div class="mu-item">
+      <span class="mu-dot done"></span>
+      <span class="mu-text">Резервное копирование базы данных</span>
+      <span class="mu-time">✓ 14:20</span>
+    </div>
+    <div class="mu-item">
+      <span class="mu-dot done"></span>
+      <span class="mu-text">Обновление каталога AI-инструментов</span>
+      <span class="mu-time">✓ 14:45</span>
+    </div>
+    <div class="mu-item">
+      <span class="mu-dot active"></span>
+      <span class="mu-text">Оптимизация скорости загрузки страниц</span>
+      <span class="mu-time">⟳ Сейчас</span>
+    </div>
+    <div class="mu-item">
+      <span class="mu-dot pending"></span>
+      <span class="mu-text">Запуск новой версии сайта</span>
+      <span class="mu-time">~ 17:30</span>
+    </div>
+  </div>
+
+  <div class="maint-notify">
+    <div class="mn-label">Уведомить, когда сайт заработает:</div>
+    <div class="mn-form">
+      <input type="email" placeholder="your@email.com" id="notifyEmail">
+      <button
+        class="btn btn--primary"
+        onclick="
+          const v = document.getElementById('notifyEmail').value.trim();
+          if (v && v.includes('@')) {
+            window.wvShowToast?.('✓ Пришлём уведомление!');
+            document.getElementById('notifyEmail').value = '';
+          }
+        "
+      >Уведомить</button>
+    </div>
+  </div>
+
+  <div class="maint-footer">
+    <div class="mf-copy">© 2024 Welvers. Все права защищены.</div>
+    <div class="mf-links">
+      <a href="https://status.welvers.com" target="_blank">Статус сервиса</a>
+      <a href="https://t.me/welvers" target="_blank">Telegram</a>
+      <a href="https://x.com/welvers" target="_blank">X / Twitter</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    let totalSeconds = 2 * 3600 + 34 * 60 + 17;
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    const hEl = document.getElementById('etaH');
+    const mEl = document.getElementById('etaM');
+    const sEl = document.getElementById('etaS');
+
+    const tick = setInterval(() => {
+      if (totalSeconds <= 0) { clearInterval(tick); location.reload(); return; }
+      totalSeconds--;
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+      if (hEl) hEl.textContent = pad(h);
+      if (mEl) mEl.textContent = pad(m);
+      if (sEl) sEl.textContent = pad(s);
+    }, 1000);
+  </script>
+</body>
+</html>

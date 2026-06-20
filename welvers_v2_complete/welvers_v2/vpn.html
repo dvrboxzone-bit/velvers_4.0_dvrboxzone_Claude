@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Лучшие VPN-сервисы 2024 — независимые обзоры NordVPN, ExpressVPN, Surfshark. Тесты скорости, безопасности, цены.">
+  <meta property="og:title" content="VPN-сервисы — Рейтинг и обзоры 2024 | WELVERS">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://welvers.com/vpn/">
+  <link rel="alternate" hreflang="ru" href="https://welvers.com/vpn/">
+  <link rel="alternate" hreflang="en" href="https://welvers.com/en/vpn/">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"Лучшие VPN 2024","url":"https://welvers.com/vpn/","numberOfItems":8}
+  </script>
+
+  <title>Лучшие VPN-сервисы 2024 — Рейтинг и обзоры | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+
+    .page-hero {
+      padding: calc(var(--header-height) + 52px) 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero__eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-hero__eyebrow::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--text-muted);
+    }
+
+    .page-hero__title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-hero__desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .page-hero__stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-stat strong { color: var(--text-secondary); }
+
+    /* ── TOP-3 PODIUM ── */
+
+    .podium {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .podium__title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .podium__title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .podium__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .podium-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+      cursor: pointer;
+    }
+
+    .podium-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .podium-card--gold {
+      border-color: rgba(251,191,36,0.3);
+      background: rgba(251,191,36,0.03);
+    }
+
+    .podium-card--gold::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+    }
+
+    .podium__rank {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rank--gold   { color: #fbbf24; }
+    .rank--silver { color: #9ca3af; }
+    .rank--bronze { color: #cd7f32; }
+
+    .podium__head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .podium__logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .podium__name    { font-size: 18px; font-weight: 700; margin-bottom: 3px; }
+    .podium__tagline { font-size: 12px; color: var(--text-muted); }
+
+    .podium__rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .podium__stars { color: #fbbf24; font-size: 14px; letter-spacing: 1px; }
+    .podium__score { font-size: 20px; font-weight: 700; }
+
+    .podium__highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .podium__highlights li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .podium__highlights li::before {
+      content: '✓';
+      color: #4ade80;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .podium__price {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .podium__price strong {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .podium__actions { display: flex; gap: 8px; }
+
+    /* ── Toolbar ── */
+
+    .toolbar {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 50;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .toolbar__inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .filter-btn:hover { color: var(--text-secondary); border-color: var(--border-hover); }
+    .filter-btn.is-active { color: var(--text-primary); border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.07); }
+
+    .toolbar__search {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: border-color 0.2s;
+    }
+
+    .toolbar__search:focus-within { border-color: var(--border-hover); }
+    .toolbar__search svg { color: var(--text-muted); flex-shrink: 0; }
+
+    .toolbar__search input {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 13px;
+      color: var(--text-primary);
+      font-family: var(--font);
+      width: 160px;
+    }
+
+    .toolbar__search input::placeholder { color: var(--text-muted); }
+
+    /* ── Catalog layout ── */
+
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      padding: 40px 0 80px;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+
+    .sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 57px);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sidebar__section { margin-bottom: 8px; }
+
+    .sidebar__title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0 10px;
+      margin-bottom: 6px;
+    }
+
+    .sidebar__link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+
+    .sidebar__link:hover { color: var(--text-primary); background: var(--bg-card); }
+    .sidebar__link.is-active { color: var(--text-primary); background: var(--bg-card); }
+
+    .sidebar__count {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.06);
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+
+    .sidebar__divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+    .sidebar__cta {
+      padding: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-top: 8px;
+    }
+
+    .sidebar__cta-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .sidebar__cta-desc  { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+
+    /* ── VPN list cards ── */
+
+    .vpn-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .vpn-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      cursor: pointer;
+    }
+
+    .vpn-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+
+    .vpn-card__logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .vpn-card__body { min-width: 0; }
+
+    .vpn-card__header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .vpn-card__name   { font-size: 16px; font-weight: 600; }
+    .vpn-card__badge  {
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .badge--best  { background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.25); }
+    .badge--speed { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+    .badge--value { background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.25); }
+    .badge--privacy { background: rgba(192,132,252,0.12); color: #c084fc; border: 1px solid rgba(192,132,252,0.25); }
+
+    .vpn-card__rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .vpn-card__stars { color: #fbbf24; font-size: 12px; letter-spacing: 1px; }
+    .vpn-card__score { font-size: 14px; font-weight: 600; }
+    .vpn-card__votes { font-size: 11px; color: var(--text-muted); }
+
+    .vpn-card__desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .vpn-card__specs {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .spec {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .spec__val { color: var(--text-secondary); font-weight: 500; }
+
+    .vpn-card__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .vpn-card__price {
+      text-align: right;
+    }
+
+    .vpn-card__price-val {
+      font-size: 18px;
+      font-weight: 700;
+      display: block;
+    }
+
+    .vpn-card__price-per {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ── Comparison table ── */
+
+    .compare-section {
+      padding: 56px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .compare-section__title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .compare-table th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-table th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+    .compare-table th:last-child  { border-radius: 0 var(--radius-sm) 0 0; }
+
+    .compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: var(--bg-card); }
+
+    .compare-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ct-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .check-yes { color: #4ade80; }
+    .check-no  { color: var(--text-muted); }
+
+    /* ── Responsive ── */
+
+    @media (max-width: 1100px) {
+      .catalog-layout { grid-template-columns: 1fr; }
+      .sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .sidebar__section { display: contents; }
+      .sidebar__title, .sidebar__divider, .sidebar__cta { display: none; }
+      .sidebar__link {
+        padding: 6px 12px;
+        border-radius: 100px;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+      }
+      .podium__grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .vpn-card {
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+      }
+      .vpn-card__actions { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; }
+      .vpn-card__price { text-align: left; }
+      .compare-table { font-size: 12px; }
+      .compare-table th, .compare-table td { padding: 10px 12px; }
+    }
+
+    @media (max-width: 640px) {
+      .toolbar__search { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link nav__link--active">VPN</a>
+        <a href="/tools/" class="nav__link">Инструменты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+        <a href="/comparisons/" class="nav__link">Сравнения</a>
+      </nav>
+      <div class="header__actions">
+        <div class="search-bar">
+          <svg class="search-bar__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="search-bar__placeholder">Поиск инструментов...</span>
+          <kbd class="search-bar__kbd">⌘K</kbd>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button>
+          <button class="lang-btn" onclick="switchLang('en')">EN</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <div class="page-hero">
+      <div class="container">
+        <nav aria-label="Хлебные крошки" style="font-size:13px;color:var(--text-muted);margin-bottom:16px;display:flex;gap:8px;align-items:center;">
+          <a href="/" style="color:var(--text-muted);transition:color .2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Главная</a>
+          <span>›</span>
+          <span style="color:var(--text-secondary);">VPN</span>
+        </nav>
+        <div class="page-hero__eyebrow">Независимые обзоры</div>
+        <h1 class="page-hero__title">Лучшие VPN-сервисы 2024</h1>
+        <p class="page-hero__desc">Протестировали скорость, безопасность и надёжность 20+ VPN-сервисов. Выбрали лучшие для разных задач: стриминг, приватность, обход блокировок.</p>
+        <div class="page-hero__stats">
+          <div class="hero-stat"><strong>20+</strong> VPN протестировано</div>
+          <div class="hero-stat"><strong>6</strong> критериев оценки</div>
+          <div class="hero-stat">🔄 Обновлено: декабрь 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TOP-3 PODIUM ── -->
+    <div class="podium">
+      <div class="container">
+        <div class="podium__title">🏆 Топ-3 VPN по версии WELVERS</div>
+        <div class="podium__grid">
+
+          <!-- #1 NordVPN -->
+          <a href="/vpn/nordvpn/" class="podium-card podium-card--gold">
+            <div class="podium__rank rank--gold">🥇 #1 · Лучший выбор</div>
+            <div class="podium__head">
+              <div class="podium__logo" style="background:#4687ff;color:#fff;">N</div>
+              <div>
+                <div class="podium__name">NordVPN</div>
+                <div class="podium__tagline">Лучшее соотношение цена/качество</div>
+              </div>
+            </div>
+            <div class="podium__rating">
+              <span class="podium__stars">★★★★★</span>
+              <span class="podium__score">4.9</span>
+            </div>
+            <ul class="podium__highlights">
+              <li>6700+ серверов в 111 странах</li>
+              <li>Threat Protection от рекламы и малвари</li>
+              <li>Double VPN и Onion over VPN</li>
+              <li>Разблокирует Netflix, Disney+, BBC</li>
+              <li>До 10 устройств одновременно</li>
+            </ul>
+            <div class="podium__price">от <strong>$3.39</strong>/мес</div>
+            <div class="podium__actions">
+              <a href="/vpn/nordvpn/" class="btn btn--primary" style="flex:1;justify-content:center;">Читать обзор</a>
+              <a href="https://nordvpn.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary" onclick="event.stopPropagation()">Сайт ↗</a>
+            </div>
+          </a>
+
+          <!-- #2 ExpressVPN -->
+          <a href="/vpn/expressvpn/" class="podium-card">
+            <div class="podium__rank rank--silver">🥈 #2 · Самый быстрый</div>
+            <div class="podium__head">
+              <div class="podium__logo" style="background:#e74c3c;color:#fff;">E</div>
+              <div>
+                <div class="podium__name">ExpressVPN</div>
+                <div class="podium__tagline">Максимальная скорость</div>
+              </div>
+            </div>
+            <div class="podium__rating">
+              <span class="podium__stars">★★★★½</span>
+              <span class="podium__score">4.7</span>
+            </div>
+            <ul class="podium__highlights">
+              <li>3000+ серверов в 105 странах</li>
+              <li>Протокол Lightway — очень быстрый</li>
+              <li>Работает в Китае и России</li>
+              <li>TrustedServer — RAM-only серверы</li>
+              <li>8 устройств одновременно</li>
+            </ul>
+            <div class="podium__price">от <strong>$6.67</strong>/мес</div>
+            <div class="podium__actions">
+              <a href="/vpn/expressvpn/" class="btn btn--secondary" style="flex:1;justify-content:center;">Читать обзор</a>
+              <a href="https://expressvpn.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary" onclick="event.stopPropagation()">Сайт ↗</a>
+            </div>
+          </a>
+
+          <!-- #3 Surfshark -->
+          <a href="/vpn/surfshark/" class="podium-card">
+            <div class="podium__rank rank--bronze">🥉 #3 · Лучшая цена</div>
+            <div class="podium__head">
+              <div class="podium__logo" style="background:#1dbfff;color:#fff;">S</div>
+              <div>
+                <div class="podium__name">Surfshark</div>
+                <div class="podium__tagline">∞ устройств, лучшая цена</div>
+              </div>
+            </div>
+            <div class="podium__rating">
+              <span class="podium__stars">★★★★½</span>
+              <span class="podium__score">4.6</span>
+            </div>
+            <ul class="podium__highlights">
+              <li>3200+ серверов в 100 странах</li>
+              <li>Безлимитное количество устройств</li>
+              <li>CleanWeb — блокировка рекламы</li>
+              <li>MultiHop — двойная маршрутизация</li>
+              <li>Camouflage Mode для обхода блокировок</li>
+            </ul>
+            <div class="podium__price">от <strong>$2.29</strong>/мес</div>
+            <div class="podium__actions">
+              <a href="/vpn/surfshark/" class="btn btn--secondary" style="flex:1;justify-content:center;">Читать обзор</a>
+              <a href="https://surfshark.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary" onclick="event.stopPropagation()">Сайт ↗</a>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TOOLBAR ── -->
+    <div class="toolbar">
+      <div class="container toolbar__inner">
+        <button class="filter-btn is-active" data-filter="all">Все VPN</button>
+        <button class="filter-btn" data-filter="streaming">📺 Стриминг</button>
+        <button class="filter-btn" data-filter="privacy">🔒 Приватность</button>
+        <button class="filter-btn" data-filter="speed">⚡ Скорость</button>
+        <button class="filter-btn" data-filter="budget">💰 Бюджетные</button>
+        <button class="filter-btn" data-filter="russia">🇷🇺 Россия</button>
+        <div class="toolbar__search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="vpnSearch" placeholder="Найти VPN...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CATALOG ── -->
+    <div class="container">
+      <div class="catalog-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar__section">
+            <div class="sidebar__title">Назначение</div>
+            <div class="sidebar__link is-active" data-filter="all">Все VPN <span class="sidebar__count">20</span></div>
+            <div class="sidebar__link" data-filter="streaming">Стриминг <span class="sidebar__count">8</span></div>
+            <div class="sidebar__link" data-filter="privacy">Приватность <span class="sidebar__count">6</span></div>
+            <div class="sidebar__link" data-filter="speed">Скорость <span class="sidebar__count">5</span></div>
+            <div class="sidebar__link" data-filter="russia">Россия <span class="sidebar__count">4</span></div>
+            <div class="sidebar__link" data-filter="budget">Бюджетные <span class="sidebar__count">4</span></div>
+          </div>
+          <div class="sidebar__divider"></div>
+          <div class="sidebar__section">
+            <div class="sidebar__title">Цена</div>
+            <div class="sidebar__link">До $3/мес</div>
+            <div class="sidebar__link">$3–6/мес</div>
+            <div class="sidebar__link">$6+/мес</div>
+            <div class="sidebar__link">Есть бесплатный</div>
+          </div>
+          <div class="sidebar__divider"></div>
+          <div class="sidebar__section">
+            <div class="sidebar__title">Протоколы</div>
+            <div class="sidebar__link">WireGuard</div>
+            <div class="sidebar__link">OpenVPN</div>
+            <div class="sidebar__link">Проприетарный</div>
+          </div>
+          <div class="sidebar__cta">
+            <div class="sidebar__cta-title">🎯 Не знаешь какой VPN?</div>
+            <div class="sidebar__cta-desc">Пройди опрос и получи персональную рекомендацию</div>
+            <a href="/finder/" class="btn btn--secondary" style="width:100%;justify-content:center;font-size:13px;padding:9px 16px;">Подобрать VPN →</a>
+          </div>
+        </aside>
+
+        <!-- VPN List -->
+        <div>
+          <div class="vpn-list" id="vpnList">
+
+            <!-- NordVPN -->
+            <a href="/vpn/nordvpn/" class="vpn-card" data-cat="streaming speed russia" data-name="nordvpn nord vpn">
+              <div class="vpn-card__logo" style="background:#4687ff;color:#fff;">N</div>
+              <div class="vpn-card__body">
+                <div class="vpn-card__header">
+                  <span class="vpn-card__name">NordVPN</span>
+                  <span class="vpn-card__badge badge--best">Лучший выбор</span>
+                  <span class="vpn-card__badge badge--streaming">Стриминг</span>
+                </div>
+                <div class="vpn-card__rating">
+                  <span class="vpn-card__stars">★★★★★</span>
+                  <span class="vpn-card__score">4.9</span>
+                  <span class="vpn-card__votes">(2.8K отзывов)</span>
+                </div>
+                <p class="vpn-card__desc">Лучший VPN по соотношению цена/качество. 6700+ серверов, Threat Protection, Double VPN. Разблокирует Netflix, Disney+ и другие стриминги.</p>
+                <div class="vpn-card__specs">
+                  <div class="spec">Серверов: <span class="spec__val">6700+</span></div>
+                  <div class="spec">Стран: <span class="spec__val">111</span></div>
+                  <div class="spec">Устройств: <span class="spec__val">10</span></div>
+                  <div class="spec">Протокол: <span class="spec__val">NordLynx/WG</span></div>
+                </div>
+              </div>
+              <div class="vpn-card__actions">
+                <div class="vpn-card__price">
+                  <span class="vpn-card__price-val">$3.39</span>
+                  <span class="vpn-card__price-per">/мес (2 года)</span>
+                </div>
+                <a href="/vpn/nordvpn/" class="btn btn--primary btn--sm" onclick="event.stopPropagation()">Обзор</a>
+                <a href="https://nordvpn.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Сайт ↗</a>
+              </div>
+            </a>
+
+            <!-- ExpressVPN -->
+            <a href="/vpn/expressvpn/" class="vpn-card" data-cat="speed streaming russia" data-name="expressvpn express vpn">
+              <div class="vpn-card__logo" style="background:#e74c3c;color:#fff;">E</div>
+              <div class="vpn-card__body">
+                <div class="vpn-card__header">
+                  <span class="vpn-card__name">ExpressVPN</span>
+                  <span class="vpn-card__badge badge--speed">Самый быстрый</span>
+                </div>
+                <div class="vpn-card__rating">
+                  <span class="vpn-card__stars">★★★★½</span>
+                  <span class="vpn-card__score">4.7</span>
+                  <span class="vpn-card__votes">(2.1K отзывов)</span>
+                </div>
+                <p class="vpn-card__desc">Самый быстрый VPN благодаря протоколу Lightway. RAM-only серверы, работает в Китае и России. Лучший для стриминга в 4K.</p>
+                <div class="vpn-card__specs">
+                  <div class="spec">Серверов: <span class="spec__val">3000+</span></div>
+                  <div class="spec">Стран: <span class="spec__val">105</span></div>
+                  <div class="spec">Устройств: <span class="spec__val">8</span></div>
+                  <div class="spec">Протокол: <span class="spec__val">Lightway</span></div>
+                </div>
+              </div>
+              <div class="vpn-card__actions">
+                <div class="vpn-card__price">
+                  <span class="vpn-card__price-val">$6.67</span>
+                  <span class="vpn-card__price-per">/мес (1 год)</span>
+                </div>
+                <a href="/vpn/expressvpn/" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Обзор</a>
+                <a href="https://expressvpn.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Сайт ↗</a>
+              </div>
+            </a>
+
+            <!-- Surfshark -->
+            <a href="/vpn/surfshark/" class="vpn-card" data-cat="budget streaming russia" data-name="surfshark surf shark vpn">
+              <div class="vpn-card__logo" style="background:#1dbfff;color:#fff;">S</div>
+              <div class="vpn-card__body">
+                <div class="vpn-card__header">
+                  <span class="vpn-card__name">Surfshark</span>
+                  <span class="vpn-card__badge badge--value">Лучшая цена</span>
+                </div>
+                <div class="vpn-card__rating">
+                  <span class="vpn-card__stars">★★★★½</span>
+                  <span class="vpn-card__score">4.6</span>
+                  <span class="vpn-card__votes">(1.9K отзывов)</span>
+                </div>
+                <p class="vpn-card__desc">∞ устройств одновременно — уникальная фишка. Camouflage Mode для обхода блокировок. Отличная цена при двухлетнем тарифе.</p>
+                <div class="vpn-card__specs">
+                  <div class="spec">Серверов: <span class="spec__val">3200+</span></div>
+                  <div class="spec">Стран: <span class="spec__val">100</span></div>
+                  <div class="spec">Устройств: <span class="spec__val">∞</span></div>
+                  <div class="spec">Протокол: <span class="spec__val">WireGuard</span></div>
+                </div>
+              </div>
+              <div class="vpn-card__actions">
+                <div class="vpn-card__price">
+                  <span class="vpn-card__price-val">$2.29</span>
+                  <span class="vpn-card__price-per">/мес (2 года)</span>
+                </div>
+                <a href="/vpn/surfshark/" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Обзор</a>
+                <a href="https://surfshark.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Сайт ↗</a>
+              </div>
+            </a>
+
+            <!-- ProtonVPN -->
+            <a href="/vpn/protonvpn/" class="vpn-card" data-cat="privacy" data-name="protonvpn proton vpn швейцария">
+              <div class="vpn-card__logo" style="background:#6d4aff;color:#fff;">P</div>
+              <div class="vpn-card__body">
+                <div class="vpn-card__header">
+                  <span class="vpn-card__name">ProtonVPN</span>
+                  <span class="vpn-card__badge badge--privacy">Максимум приватности</span>
+                </div>
+                <div class="vpn-card__rating">
+                  <span class="vpn-card__stars">★★★★½</span>
+                  <span class="vpn-card__score">4.6</span>
+                  <span class="vpn-card__votes">(1.4K отзывов)</span>
+                </div>
+                <p class="vpn-card__desc">Швейцарская юрисдикция, open-source код, независимый аудит. Есть полностью бесплатный план без ограничений по времени.</p>
+                <div class="vpn-card__specs">
+                  <div class="spec">Серверов: <span class="spec__val">6800+</span></div>
+                  <div class="spec">Стран: <span class="spec__val">91</span></div>
+                  <div class="spec">Устройств: <span class="spec__val">10</span></div>
+                  <div class="spec">Протокол: <span class="spec__val">WireGuard</span></div>
+                </div>
+              </div>
+              <div class="vpn-card__actions">
+                <div class="vpn-card__price">
+                  <span class="vpn-card__price-val">$4.99</span>
+                  <span class="vpn-card__price-per">/мес (2 года)</span>
+                </div>
+                <a href="/vpn/protonvpn/" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Обзор</a>
+                <a href="https://protonvpn.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Сайт ↗</a>
+              </div>
+            </a>
+
+            <!-- Mullvad -->
+            <a href="/vpn/mullvad/" class="vpn-card" data-cat="privacy" data-name="mullvad vpn анонимность">
+              <div class="vpn-card__logo" style="background:#f9a825;color:#000;">M</div>
+              <div class="vpn-card__body">
+                <div class="vpn-card__header">
+                  <span class="vpn-card__name">Mullvad VPN</span>
+                  <span class="vpn-card__badge badge--privacy">Максимум анонимности</span>
+                </div>
+                <div class="vpn-card__rating">
+                  <span class="vpn-card__stars">★★★★½</span>
+                  <span class="vpn-card__score">4.5</span>
+                  <span class="vpn-card__votes">(890 отзывов)</span>
+                </div>
+                <p class="vpn-card__desc">Оплата наличными и криптовалютой. Не требует email при регистрации. Фиксированная цена €5/мес без скидок и уловок.</p>
+                <div class="vpn-card__specs">
+                  <div class="spec">Серверов: <span class="spec__val">700+</span></div>
+                  <div class="spec">Стран: <span class="spec__val">45</span></div>
+                  <div class="spec">Устройств: <span class="spec__val">5</span></div>
+                  <div class="spec">Протокол: <span class="spec__val">WireGuard</span></div>
+                </div>
+              </div>
+              <div class="vpn-card__actions">
+                <div class="vpn-card__price">
+                  <span class="vpn-card__price-val">€5.00</span>
+                  <span class="vpn-card__price-per">/мес (фиксировано)</span>
+                </div>
+                <a href="/vpn/mullvad/" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Обзор</a>
+                <a href="https://mullvad.net" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Сайт ↗</a>
+              </div>
+            </a>
+
+            <!-- CyberGhost -->
+            <a href="/vpn/cyberghost/" class="vpn-card" data-cat="streaming budget" data-name="cyberghost cyber ghost vpn">
+              <div class="vpn-card__logo" style="background:#ffcf00;color:#000;">CG</div>
+              <div class="vpn-card__body">
+                <div class="vpn-card__header">
+                  <span class="vpn-card__name">CyberGhost</span>
+                  <span class="vpn-card__badge badge--streaming">Стриминг</span>
+                </div>
+                <div class="vpn-card__rating">
+                  <span class="vpn-card__stars">★★★★</span>
+                  <span class="vpn-card__score">4.3</span>
+                  <span class="vpn-card__votes">(1.6K отзывов)</span>
+                </div>
+                <p class="vpn-card__desc">Самое большое количество серверов. Специальные серверы для Netflix, Torrents, Gaming. Удобный интерфейс для начинающих.</p>
+                <div class="vpn-card__specs">
+                  <div class="spec">Серверов: <span class="spec__val">10 000+</span></div>
+                  <div class="spec">Стран: <span class="spec__val">100</span></div>
+                  <div class="spec">Устройств: <span class="spec__val">7</span></div>
+                  <div class="spec">Протокол: <span class="spec__val">WireGuard</span></div>
+                </div>
+              </div>
+              <div class="vpn-card__actions">
+                <div class="vpn-card__price">
+                  <span class="vpn-card__price-val">$2.19</span>
+                  <span class="vpn-card__price-per">/мес (2 года)</span>
+                </div>
+                <a href="/vpn/cyberghost/" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Обзор</a>
+                <a href="https://cyberghostvpn.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm" onclick="event.stopPropagation()">Сайт ↗</a>
+              </div>
+            </a>
+
+          </div><!-- /vpn-list -->
+
+          <!-- Empty state -->
+          <div id="emptyState" style="display:none;text-align:center;padding:60px 24px;color:var(--text-muted);">
+            <div style="font-size:36px;margin-bottom:12px;">🔍</div>
+            <div style="font-size:15px;">Ничего не найдено. Попробуйте другой запрос.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── COMPARISON TABLE ── -->
+    <div class="compare-section">
+      <div class="container">
+        <div class="compare-section__title">Сравнительная таблица VPN</div>
+        <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--border);">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>VPN</th>
+                <th>Серверов</th>
+                <th>Цена/мес</th>
+                <th>Устройств</th>
+                <th>Netflix</th>
+                <th>No-logs</th>
+                <th>Kill Switch</th>
+                <th>Аудит</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="ct-logo" style="background:#4687ff;color:#fff;">N</div>NordVPN</td>
+                <td>6700+</td>
+                <td>$3.39</td>
+                <td>10</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td><div class="ct-logo" style="background:#e74c3c;color:#fff;">E</div>ExpressVPN</td>
+                <td>3000+</td>
+                <td>$6.67</td>
+                <td>8</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td><div class="ct-logo" style="background:#1dbfff;color:#fff;">S</div>Surfshark</td>
+                <td>3200+</td>
+                <td>$2.29</td>
+                <td>∞</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td><div class="ct-logo" style="background:#6d4aff;color:#fff;">P</div>ProtonVPN</td>
+                <td>6800+</td>
+                <td>$4.99</td>
+                <td>10</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td><div class="ct-logo" style="background:#f9a825;color:#000;">M</div>Mullvad</td>
+                <td>700+</td>
+                <td>€5.00</td>
+                <td>5</td>
+                <td><span class="check-no">✗</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td><div class="ct-logo" style="background:#ffcf00;color:#000;">CG</div>CyberGhost</td>
+                <td>10 000+</td>
+                <td>$2.19</td>
+                <td>7</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">✗</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+          <p class="footer__brand-desc">Независимые обзоры и рейтинги цифровых сервисов для работы, бизнеса и безопасности.</p>
+          <div class="footer__social">
+            <a href="https://x.com/welvers" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://t.me/welvers" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+            <a href="https://youtube.com/@welvers" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__columns">
+          <div>
+            <h4 class="footer__col-title">Навигация</h4>
+            <ul class="footer__links">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/ai-tools/">AI Tools</a></li>
+              <li><a href="/vpn/">VPN</a></li>
+              <li><a href="/tools/">Инструменты</a></li>
+              <li><a href="/blog/">Блог</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">VPN-обзоры</h4>
+            <ul class="footer__links">
+              <li><a href="/vpn/nordvpn/">NordVPN</a></li>
+              <li><a href="/vpn/expressvpn/">ExpressVPN</a></li>
+              <li><a href="/vpn/surfshark/">Surfshark</a></li>
+              <li><a href="/vpn/protonvpn/">ProtonVPN</a></li>
+              <li><a href="/vpn/mullvad/">Mullvad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Правовая информация</h4>
+            <ul class="footer__links">
+              <li><a href="/legal/#privacy">Конфиденциальность</a></li>
+              <li><a href="/legal/#terms">Условия</a></li>
+              <li><a href="/legal/#affiliate">Партнёрское раскрытие</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__newsletter-title">Будьте в курсе</h4>
+          <p class="footer__newsletter-desc">Новые обзоры VPN и советы по безопасности</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-form__input" placeholder="your@email.com" required>
+            <button type="submit" class="newsletter-form__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2024 Welvers. Все права защищены.</span>
+        <span>Сайт содержит партнёрские ссылки — <a href="/legal/#affiliate" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">подробнее</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie">
+    <p class="cookie-banner__text">Мы используем cookie. <a href="/legal/#cookies">Подробнее</a></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--secondary btn--sm" onclick="dismissCookie()">Нет</button>
+      <button class="btn btn--primary btn--sm" onclick="acceptCookie()">OK</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter
+    const filterBtns = document.querySelectorAll('.filter-btn, .sidebar__link[data-filter]');
+    const cards = document.querySelectorAll('.vpn-card');
+    const empty = document.getElementById('emptyState');
+
+    function applyFilter(cat) {
+      let n = 0;
+      cards.forEach(c => {
+        const match = cat === 'all' || (c.dataset.cat || '').includes(cat);
+        c.style.display = match ? '' : 'none';
+        if (match) n++;
+      });
+      empty.style.display = n === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        const cat = btn.dataset.filter;
+        document.querySelectorAll(`[data-filter="${cat}"]`).forEach(b => b.classList.add('is-active'));
+        applyFilter(cat);
+      });
+    });
+
+    // Search
+    document.getElementById('vpnSearch').addEventListener('input', function () {
+      const q = this.value.toLowerCase().trim();
+      let n = 0;
+      cards.forEach(c => {
+        const t = (c.dataset.name || '') + ' ' + c.textContent;
+        const match = !q || t.toLowerCase().includes(q);
+        c.style.display = match ? '' : 'none';
+        if (match) n++;
+      });
+      empty.style.display = n === 0 ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>

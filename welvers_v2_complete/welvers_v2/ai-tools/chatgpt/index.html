@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Обзор ChatGPT 2024 — независимое тестирование возможностей, цен, плюсов и минусов. Оценка WELVERS: 4.9/5.">
+  <meta property="og:title" content="ChatGPT — Обзор 2024 | WELVERS">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://welvers.com/ai-tools/chatgpt/">
+  <link rel="alternate" hreflang="ru" href="https://welvers.com/ai-tools/chatgpt/">
+  <link rel="alternate" hreflang="en" href="https://welvers.com/en/ai-tools/chatgpt/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "name": "Обзор ChatGPT 2024",
+    "reviewBody": "Независимый обзор ChatGPT от редакции WELVERS",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {"@type": "Organization", "name": "WELVERS"},
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "ChatGPT",
+      "applicationCategory": "AI Assistant",
+      "operatingSystem": "Web, iOS, Android"
+    }
+  }
+  </script>
+
+  <title>ChatGPT — Обзор, цены, плюсы и минусы 2024 | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+
+    /* ── Review layout ── */
+    .review-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+      padding: 40px 0 80px;
+      align-items: start;
+    }
+
+    /* ── Review header ── */
+    .review-header {
+      padding: calc(var(--header-height) + 44px) 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover { color: var(--text-secondary); }
+
+    .review-header__top {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .review-header__logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .review-header__meta { flex: 1; }
+
+    .review-header__badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .review-header__name {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .review-header__tagline {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Verdict bar */
+    .verdict-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 28px;
+    }
+
+    .verdict-item {
+      padding: 16px 20px;
+      background: var(--bg-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .verdict-item__label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .verdict-item__value {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .verdict-item__value--score { color: #fbbf24; font-size: 24px; }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 36px;
+    }
+
+    .toc__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .toc__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+      counter-increment: toc-counter;
+    }
+
+    .toc__link:last-child { border-bottom: none; }
+    .toc__link:hover { color: var(--text-primary); }
+
+    .toc__link::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      flex-shrink: 0;
+      width: 20px;
+    }
+
+    .toc { counter-reset: toc-counter; }
+
+    /* ── Article body ── */
+    .article-body { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin: 44px 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 28px 0 10px;
+    }
+
+    .article-body p { margin-bottom: 18px; }
+
+    .article-body a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border-hover);
+    }
+
+    /* Scores */
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .score-item {
+      padding: 14px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    .score-item__label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .score-item__bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .score-item__bar {
+      flex: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .score-item__fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.5), rgba(255,255,255,0.9));
+    }
+
+    .score-item__val {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      flex-shrink: 0;
+      width: 28px;
+      text-align: right;
+    }
+
+    /* Pros/Cons */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .pros, .cons {
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+    }
+
+    .pros { background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.15); }
+    .cons { background: rgba(248,113,113,0.05); border: 1px solid rgba(248,113,113,0.15); }
+
+    .pros__title { font-size: 13px; font-weight: 700; color: #4ade80; margin-bottom: 12px; }
+    .cons__title { font-size: 13px; font-weight: 700; color: #f87171; margin-bottom: 12px; }
+
+    .pros ul, .cons ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pros li, .cons li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .pros li::before { content: '+'; color: #4ade80; font-weight: 700; flex-shrink: 0; }
+    .cons li::before { content: '−'; color: #f87171; font-weight: 700; flex-shrink: 0; }
+
+    /* Callout */
+    .callout {
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin: 20px 0;
+      font-size: 14px;
+      line-height: 1.7;
+      display: flex;
+      gap: 12px;
+    }
+
+    .callout--tip  { background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.2); }
+    .callout--warn { background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.2); }
+    .callout--info { background: rgba(255,255,255,0.03); border: 1px solid var(--border); }
+
+    .callout__icon { font-size: 18px; flex-shrink: 0; }
+    .callout__text { color: var(--text-secondary); }
+    .callout__text strong { color: var(--text-primary); }
+
+    /* Pricing table */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .plan-card {
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+    }
+
+    .plan-card--featured {
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .plan-card--featured::before {
+      content: 'Популярный';
+      position: absolute;
+      top: -1px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--text-primary);
+      color: #000;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 0 0 6px 6px;
+      white-space: nowrap;
+    }
+
+    .plan-card__name  { font-size: 14px; font-weight: 600; }
+    .plan-card__price { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+    .plan-card__per   { font-size: 12px; color: var(--text-muted); margin-top: -6px; }
+    .plan-card__features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .plan-card__features li {
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+
+    .plan-card__features li::before {
+      content: '✓';
+      color: #4ade80;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* FAQ */
+    .faq-list { margin: 20px 0; display: flex; flex-direction: column; gap: 8px; }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 16px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.2s;
+      user-select: none;
+    }
+
+    .faq-question:hover { background: rgba(255,255,255,0.03); }
+
+    .faq-question svg {
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      color: var(--text-muted);
+    }
+
+    .faq-item.is-open .faq-question svg { transform: rotate(180deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 18px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .faq-item.is-open .faq-answer { display: block; }
+
+    /* Verdict block */
+    .verdict-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      margin: 36px 0;
+    }
+
+    .verdict-block__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .verdict-block__score {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fbbf24;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .verdict-block__label { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+    .verdict-block__text  { font-size: 14px; color: var(--text-secondary); line-height: 1.75; }
+
+    /* ── Sidebar ── */
+    .review-sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    .sidebar-widget__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* CTA widget */
+    .cta-widget {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      text-align: center;
+    }
+
+    .cta-widget__logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 auto 14px;
+    }
+
+    .cta-widget__name  { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .cta-widget__score {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fbbf24;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    .cta-widget__stars { color: #fbbf24; font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
+
+    .cta-widget__price {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .cta-widget__price strong { color: var(--text-primary); font-size: 16px; }
+
+    .cta-widget__actions { display: flex; flex-direction: column; gap: 8px; }
+
+    /* Info list */
+    .info-list { display: flex; flex-direction: column; gap: 0; }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+    .info-row__label { color: var(--text-muted); }
+    .info-row__val   { color: var(--text-secondary); font-weight: 500; text-align: right; }
+
+    /* Related */
+    .related-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .related-item:last-child { border-bottom: none; }
+    .related-item:hover { opacity: 0.8; }
+
+    .related-item__logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .related-item__name  { font-size: 13px; font-weight: 500; }
+    .related-item__score { font-size: 12px; color: var(--text-muted); }
+    .related-item__arrow { color: var(--text-muted); font-size: 14px; margin-left: auto; }
+
+    /* Affiliate note */
+    .affiliate-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      line-height: 1.6;
+    }
+
+    .affiliate-note a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .review-layout { grid-template-columns: 1fr; }
+      .review-sidebar { position: static; }
+      .verdict-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .scores-grid   { grid-template-columns: 1fr; }
+      .pros-cons     { grid-template-columns: 1fr; }
+      .pricing-grid  { grid-template-columns: 1fr; }
+      .verdict-bar   { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link nav__link--active">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/tools/" class="nav__link">Инструменты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+        <a href="/comparisons/" class="nav__link">Сравнения</a>
+      </nav>
+      <div class="header__actions">
+        <div class="search-bar">
+          <svg class="search-bar__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="search-bar__placeholder">Поиск...</span>
+          <kbd class="search-bar__kbd">⌘K</kbd>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button>
+          <button class="lang-btn" onclick="switchLang('en')">EN</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── REVIEW HEADER ── -->
+    <div class="review-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <span>›</span>
+          <a href="/ai-tools/">AI Tools</a>
+          <span>›</span>
+          <span style="color:var(--text-secondary);">ChatGPT</span>
+        </nav>
+
+        <div class="review-header__top">
+          <div class="review-header__logo" style="background:#10a37f;color:#fff;">G</div>
+          <div class="review-header__meta">
+            <div class="review-header__badges">
+              <span style="padding:3px 9px;border-radius:100px;font-size:11px;font-weight:600;background:rgba(251,191,36,0.12);color:#fbbf24;border:1px solid rgba(251,191,36,0.25);">Freemium</span>
+              <span style="padding:3px 9px;border-radius:100px;font-size:11px;font-weight:600;background:rgba(74,222,128,0.1);color:#4ade80;border:1px solid rgba(74,222,128,0.2);">🏆 Выбор редакции</span>
+              <span style="padding:3px 9px;border-radius:100px;font-size:11px;color:var(--text-muted);border:1px solid var(--border);">Обновлено: декабрь 2024</span>
+            </div>
+            <h1 class="review-header__name">ChatGPT</h1>
+            <p class="review-header__tagline">Самый популярный AI-ассистент от OpenAI. GPT-4o бесплатно — текст, код, изображения, голос.</p>
+          </div>
+        </div>
+
+        <!-- Verdict bar -->
+        <div class="verdict-bar">
+          <div class="verdict-item">
+            <span class="verdict-item__label">Оценка WELVERS</span>
+            <span class="verdict-item__value verdict-item__value--score">4.9</span>
+          </div>
+          <div class="verdict-item">
+            <span class="verdict-item__label">Цена от</span>
+            <span class="verdict-item__value">Бесплатно</span>
+          </div>
+          <div class="verdict-item">
+            <span class="verdict-item__label">Тест проведён</span>
+            <span class="verdict-item__value">Ноябрь 2024</span>
+          </div>
+          <div class="verdict-item">
+            <span class="verdict-item__label">Категория</span>
+            <span class="verdict-item__value">AI-чат</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BODY ── -->
+    <div class="container">
+      <div class="review-layout">
+
+        <!-- Main content -->
+        <article>
+          <!-- TOC -->
+          <nav class="toc" aria-label="Содержание">
+            <div class="toc__title">Содержание</div>
+            <a href="#overview"  class="toc__link">Краткий обзор</a>
+            <a href="#scores"    class="toc__link">Оценки по критериям</a>
+            <a href="#pros-cons" class="toc__link">Плюсы и минусы</a>
+            <a href="#features"  class="toc__link">Функции и возможности</a>
+            <a href="#pricing"   class="toc__link">Цены и тарифы</a>
+            <a href="#verdict"   class="toc__link">Итоговый вердикт</a>
+            <a href="#faq"       class="toc__link">FAQ</a>
+          </nav>
+
+          <div class="article-body">
+
+            <!-- OVERVIEW -->
+            <h2 id="overview">Краткий обзор</h2>
+            <p>ChatGPT — флагманский продукт OpenAI, запущенный в ноябре 2022 года. За два года он стал стандартом AI-ассистентов и набрал более 100 миллионов пользователей. В 2024 году с выходом модели GPT-4o платформа сделала значительный шаг вперёд: мультимодальность (текст, изображения, голос) теперь доступна в бесплатном плане.</p>
+
+            <p>Мы тестировали ChatGPT на протяжении двух месяцев на реальных задачах: написание текстов, анализ документов, программирование, генерация изображений и голосовое общение. Результат — самый высокий средний балл среди всех протестированных AI-ассистентов.</p>
+
+            <div class="callout callout--tip">
+              <span class="callout__icon">💡</span>
+              <div class="callout__text"><strong>Главный вывод:</strong> ChatGPT остаётся лучшим универсальным AI-ассистентом в 2024 году. Бесплатный план GPT-4o закрывает 80% задач большинства пользователей.</div>
+            </div>
+
+            <!-- SCORES -->
+            <h2 id="scores">Оценки по критериям</h2>
+            <div class="scores-grid">
+              <div class="score-item">
+                <div class="score-item__label">Качество ответов</div>
+                <div class="score-item__bar-wrap">
+                  <div class="score-item__bar"><div class="score-item__fill" style="width:98%"></div></div>
+                  <span class="score-item__val">4.9</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label">Работа с кодом</div>
+                <div class="score-item__bar-wrap">
+                  <div class="score-item__bar"><div class="score-item__fill" style="width:96%"></div></div>
+                  <span class="score-item__val">4.8</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label">Написание текстов</div>
+                <div class="score-item__bar-wrap">
+                  <div class="score-item__bar"><div class="score-item__fill" style="width:98%"></div></div>
+                  <span class="score-item__val">4.9</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label">Скорость ответа</div>
+                <div class="score-item__bar-wrap">
+                  <div class="score-item__bar"><div class="score-item__fill" style="width:90%"></div></div>
+                  <span class="score-item__val">4.5</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label">Интерфейс</div>
+                <div class="score-item__bar-wrap">
+                  <div class="score-item__bar"><div class="score-item__fill" style="width:96%"></div></div>
+                  <span class="score-item__val">4.8</span>
+                </div>
+              </div>
+              <div class="score-item">
+                <div class="score-item__label">Соотношение цена/качество</div>
+                <div class="score-item__bar-wrap">
+                  <div class="score-item__bar"><div class="score-item__fill" style="width:100%"></div></div>
+                  <span class="score-item__val">5.0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROS/CONS -->
+            <h2 id="pros-cons">Плюсы и минусы</h2>
+            <div class="pros-cons">
+              <div class="pros">
+                <div class="pros__title">👍 Плюсы</div>
+                <ul>
+                  <li>GPT-4o бесплатно — лучшая модель доступна без оплаты</li>
+                  <li>Мультимодальность: текст, фото, голос в одном интерфейсе</li>
+                  <li>Огромная экосистема — тысячи кастомных GPT</li>
+                  <li>Отличная работа с кодом и дебаггинг</li>
+                  <li>Мобильное приложение с голосовым режимом</li>
+                  <li>Canvas — редактор для документов и кода</li>
+                  <li>Веб-поиск в реальном времени</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <div class="cons__title">👎 Минусы</div>
+                <ul>
+                  <li>Лимиты на GPT-4o в бесплатном плане</li>
+                  <li>Нет возможности загрузить файлы бесплатно</li>
+                  <li>Иногда «галлюцинирует» — придумывает факты</li>
+                  <li>Контекстное окно меньше чем у Claude</li>
+                  <li>Политика конфиденциальности вызывает вопросы</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- FEATURES -->
+            <h2 id="features">Функции и возможности</h2>
+
+            <h3>GPT-4o — мультимодальная модель</h3>
+            <p>С 2024 года GPT-4o стала основной моделью ChatGPT. Она понимает и генерирует текст, анализирует изображения и работает с голосом в режиме реального времени — всё в одном диалоге. В тестах скорость ответа выросла примерно вдвое по сравнению с GPT-4.</p>
+
+            <h3>Custom GPTs — кастомные ассистенты</h3>
+            <p>OpenAI позволяет создавать персонализированных AI-ассистентов с заданными инструкциями, доступом к файлам и веб-поиску. В магазине GPTs уже более 3 миллионов кастомных агентов — от юридических советников до генераторов мемов.</p>
+
+            <div class="callout callout--warn">
+              <span class="callout__icon">⚠️</span>
+              <div class="callout__text"><strong>Важно:</strong> Бесплатный план ограничивает количество сообщений с GPT-4o. После достижения лимита автоматически переключается на GPT-3.5. Для профессионального использования рекомендуем ChatGPT Plus.</div>
+            </div>
+
+            <h3>Веб-поиск и актуальные данные</h3>
+            <p>ChatGPT умеет искать актуальную информацию в интернете. Функция доступна как в бесплатном, так и платном плане. Результаты включают ссылки на источники, что упрощает проверку фактов.</p>
+
+            <!-- PRICING -->
+            <h2 id="pricing">Цены и тарифы</h2>
+            <div class="pricing-grid">
+              <div class="plan-card">
+                <div class="plan-card__name">Free</div>
+                <div class="plan-card__price">$0</div>
+                <div class="plan-card__per">навсегда</div>
+                <ul class="plan-card__features">
+                  <li>GPT-4o с лимитами</li>
+                  <li>Веб-поиск</li>
+                  <li>Генерация изображений (лимит)</li>
+                  <li>Голосовой режим</li>
+                </ul>
+              </div>
+              <div class="plan-card plan-card--featured">
+                <div class="plan-card__name">Plus</div>
+                <div class="plan-card__price">$20</div>
+                <div class="plan-card__per">/мес</div>
+                <ul class="plan-card__features">
+                  <li>GPT-4o без лимитов</li>
+                  <li>o1 и o1-mini модели</li>
+                  <li>Загрузка файлов</li>
+                  <li>Создание GPTs</li>
+                  <li>Canvas редактор</li>
+                </ul>
+              </div>
+              <div class="plan-card">
+                <div class="plan-card__name">Team / Enterprise</div>
+                <div class="plan-card__price">$25+</div>
+                <div class="plan-card__per">/пользователь/мес</div>
+                <ul class="plan-card__features">
+                  <li>Все функции Plus</li>
+                  <li>Данные не используются для обучения</li>
+                  <li>Расширенное окно контекста</li>
+                  <li>Администрирование команды</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- VERDICT -->
+            <h2 id="verdict">Итоговый вердикт</h2>
+            <div class="verdict-block">
+              <div class="verdict-block__title">Вердикт WELVERS</div>
+              <div class="verdict-block__score">4.9</div>
+              <div class="verdict-block__label">Лучший AI-ассистент 2024 года</div>
+              <div class="verdict-block__text">ChatGPT остаётся эталоном среди AI-ассистентов. GPT-4o в бесплатном плане — это невероятная ценность: мощная мультимодальная модель без ежемесячной платы. Для большинства пользователей бесплатного плана более чем достаточно. Если нужны файлы, расширенные лимиты и новейшие модели — ChatGPT Plus за $20 оправдывает каждый доллар.</div>
+            </div>
+
+            <!-- FAQ -->
+            <h2 id="faq">Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  ChatGPT бесплатный или платный?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <div class="faq-answer">ChatGPT имеет бесплатный план с GPT-4o (с лимитами) и платный ChatGPT Plus за $20/мес без ограничений. Для большинства задач бесплатного плана достаточно.</div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Чем ChatGPT отличается от Claude?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <div class="faq-answer">ChatGPT лучше для универсальных задач, генерации изображений и работы с голосом. Claude сильнее в анализе длинных документов (200K контекст) и даёт более взвешенные ответы. Используйте оба для разных задач.</div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Безопасно ли использовать ChatGPT для бизнеса?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <div class="faq-answer">В бесплатном и Plus-плане переписки могут использоваться для улучшения моделей. Для бизнеса с конфиденциальными данными используйте Team или Enterprise тариф — там данные не идут на обучение.</div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  Работает ли ChatGPT на русском языке?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <div class="faq-answer">Да, ChatGPT отлично работает на русском языке. GPT-4o понимает и генерирует текст на русском без дополнительных настроек. Качество ответов на русском немного уступает английскому, но разница минимальна.</div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="review-sidebar">
+
+          <!-- CTA widget -->
+          <div class="cta-widget">
+            <div class="cta-widget__logo" style="background:#10a37f;color:#fff;">G</div>
+            <div class="cta-widget__name">ChatGPT</div>
+            <div class="cta-widget__score">4.9</div>
+            <div class="cta-widget__stars">★★★★★</div>
+            <div class="cta-widget__price">от <strong>$0</strong> / мес</div>
+            <div class="cta-widget__actions">
+              <a href="https://chat.openai.com" target="_blank" rel="nofollow noopener" class="btn btn--primary" style="justify-content:center;">Попробовать бесплатно ↗</a>
+              <a href="/comparisons/chatgpt-vs-claude/" class="btn btn--secondary" style="justify-content:center;font-size:13px;">ChatGPT vs Claude</a>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Информация</div>
+            <div class="info-list">
+              <div class="info-row"><span class="info-row__label">Разработчик</span><span class="info-row__val">OpenAI</span></div>
+              <div class="info-row"><span class="info-row__label">Запущен</span><span class="info-row__val">Ноябрь 2022</span></div>
+              <div class="info-row"><span class="info-row__label">Модели</span><span class="info-row__val">GPT-4o, o1, o3</span></div>
+              <div class="info-row"><span class="info-row__label">Контекст</span><span class="info-row__val">128K токенов</span></div>
+              <div class="info-row"><span class="info-row__label">Платформы</span><span class="info-row__val">Web, iOS, Android</span></div>
+              <div class="info-row"><span class="info-row__label">API</span><span class="info-row__val">Да (platform.openai.com)</span></div>
+              <div class="info-row"><span class="info-row__label">Язык</span><span class="info-row__val">100+ языков</span></div>
+            </div>
+          </div>
+
+          <!-- Alternatives -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Альтернативы</div>
+            <a href="/ai-tools/claude/" class="related-item">
+              <div class="related-item__logo" style="background:#d97757;color:#fff;">C</div>
+              <div>
+                <div class="related-item__name">Claude</div>
+                <div class="related-item__score">★★★★★ 4.8</div>
+              </div>
+              <span class="related-item__arrow">›</span>
+            </a>
+            <a href="/ai-tools/gemini/" class="related-item">
+              <div class="related-item__logo" style="background:linear-gradient(135deg,#4285f4,#ea4335);color:#fff;">G</div>
+              <div>
+                <div class="related-item__name">Gemini</div>
+                <div class="related-item__score">★★★★ 4.3</div>
+              </div>
+              <span class="related-item__arrow">›</span>
+            </a>
+            <a href="/ai-tools/perplexity/" class="related-item">
+              <div class="related-item__logo" style="background:#1e2a3a;color:#60a5fa;">◎</div>
+              <div>
+                <div class="related-item__name">Perplexity AI</div>
+                <div class="related-item__score">★★★★½ 4.6</div>
+              </div>
+              <span class="related-item__arrow">›</span>
+            </a>
+          </div>
+
+          <!-- Affiliate note -->
+          <div class="affiliate-note">
+            ℹ️ Эта страница содержит партнёрские ссылки. При переходе и покупке мы можем получить комиссию без дополнительных затрат для вас. Это не влияет на наши оценки. <a href="/legal/#affiliate">Подробнее</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+          <p class="footer__brand-desc">Независимые обзоры и рейтинги цифровых сервисов.</p>
+          <div class="footer__social">
+            <a href="https://x.com/welvers" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://t.me/welvers" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__columns">
+          <div>
+            <h4 class="footer__col-title">Навигация</h4>
+            <ul class="footer__links">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/ai-tools/">AI Tools</a></li>
+              <li><a href="/vpn/">VPN</a></li>
+              <li><a href="/blog/">Блог</a></li>
+              <li><a href="/comparisons/">Сравнения</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">AI Tools</h4>
+            <ul class="footer__links">
+              <li><a href="/ai-tools/chatgpt/">ChatGPT</a></li>
+              <li><a href="/ai-tools/claude/">Claude</a></li>
+              <li><a href="/ai-tools/midjourney/">Midjourney</a></li>
+              <li><a href="/ai-tools/cursor/">Cursor</a></li>
+              <li><a href="/ai-tools/perplexity/">Perplexity</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Правовая информация</h4>
+            <ul class="footer__links">
+              <li><a href="/legal/#privacy">Конфиденциальность</a></li>
+              <li><a href="/legal/#terms">Условия</a></li>
+              <li><a href="/legal/#affiliate">Партнёрское раскрытие</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__newsletter-title">Будьте в курсе</h4>
+          <p class="footer__newsletter-desc">Новые обзоры каждую неделю</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-form__input" placeholder="your@email.com" required>
+            <button type="submit" class="newsletter-form__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2024 Welvers. Все права защищены.</span>
+        <span>Сайт содержит партнёрские ссылки — <a href="/legal/#affiliate" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">подробнее</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog">
+    <p class="cookie-banner__text">Мы используем cookie. <a href="/legal/#cookies">Подробнее</a></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--secondary btn--sm" onclick="dismissCookie()">Нет</button>
+      <button class="btn btn--primary btn--sm" onclick="acceptCookie()">OK</button>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('is-open'));
+      if (!isOpen) item.classList.add('is-open');
+    }
+  </script>
+</body>
+</html>

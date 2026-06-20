@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог лучших AI-инструментов 2024 — независимые обзоры ChatGPT, Claude, Midjourney, Cursor и других. Рейтинги, сравнения, цены.">
+  <meta property="og:title" content="AI Tools — Каталог и обзоры | WELVERS">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://welvers.com/ai-tools/">
+  <link rel="alternate" hreflang="ru" href="https://welvers.com/ai-tools/">
+  <link rel="alternate" hreflang="en" href="https://welvers.com/en/ai-tools/">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"Лучшие AI-инструменты 2024","url":"https://welvers.com/ai-tools/","numberOfItems":12}
+  </script>
+
+  <title>AI Tools — Каталог и обзоры 2024 | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── Page-specific styles ── */
+
+    .page-hero {
+      padding: calc(var(--header-height) + 52px) 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero__eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-hero__eyebrow::before {
+      content: '';
+      width: 16px; height: 1px;
+      background: var(--text-muted);
+    }
+
+    .page-hero__title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-hero__desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .page-hero__stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-stat strong { color: var(--text-secondary); }
+
+    /* ── Toolbar (filters + search) ── */
+
+    .toolbar {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 50;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .toolbar__inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .filter-btn:hover {
+      color: var(--text-secondary);
+      border-color: var(--border-hover);
+    }
+
+    .filter-btn.is-active {
+      color: var(--text-primary);
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .toolbar__search {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: border-color 0.2s;
+    }
+
+    .toolbar__search:focus-within { border-color: var(--border-hover); }
+
+    .toolbar__search svg { color: var(--text-muted); flex-shrink: 0; }
+
+    .toolbar__search input {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 13px;
+      color: var(--text-primary);
+      font-family: var(--font);
+      width: 160px;
+    }
+
+    .toolbar__search input::placeholder { color: var(--text-muted); }
+
+    /* ── Catalog layout ── */
+
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      padding: 40px 0 80px;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+
+    .sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 57px);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar__section { margin-bottom: 8px; }
+
+    .sidebar__title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0 10px;
+      margin-bottom: 6px;
+    }
+
+    .sidebar__link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+
+    .sidebar__link:hover { color: var(--text-primary); background: var(--bg-card); }
+    .sidebar__link.is-active { color: var(--text-primary); background: var(--bg-card); }
+
+    .sidebar__count {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.06);
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+
+    .sidebar__divider {
+      height: 1px;
+      background: var(--border);
+      margin: 10px 0;
+    }
+
+    .sidebar__cta {
+      padding: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-top: 8px;
+    }
+
+    .sidebar__cta-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .sidebar__cta-desc  { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+
+    /* ── Tools grid ── */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    /* ── Tool catalog card ── */
+
+    .tcc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      cursor: pointer;
+    }
+
+    .tcc:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .tcc__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .tcc__logo {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .tcc__badge {
+      padding: 3px 9px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .badge--free     { background: rgba(74,222,128,0.1);  color: #4ade80; border: 1px solid rgba(74,222,128,0.2); }
+    .badge--freemium { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
+    .badge--paid     { background: rgba(192,132,252,0.1); color: #c084fc; border: 1px solid rgba(192,132,252,0.2); }
+    .badge--new      { background: rgba(96,165,250,0.1);  color: #60a5fa; border: 1px solid rgba(96,165,250,0.2); }
+
+    .tcc__name     { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+    .tcc__category {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .tcc__rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tcc__stars { color: #fbbf24; font-size: 12px; letter-spacing: 1px; }
+    .tcc__score { font-size: 13px; font-weight: 600; }
+    .tcc__votes { font-size: 11px; color: var(--text-muted); }
+
+    .tcc__desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .tcc__tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .tcc__tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      padding: 3px 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .tcc__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+
+    .tcc__review-link {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+    }
+
+    .tcc__review-link:hover { color: var(--text-primary); }
+
+    .tcc__ext-link {
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: 13px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .tcc__ext-link:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
+    /* ── Empty state ── */
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 64px 24px;
+      color: var(--text-muted);
+    }
+
+    .empty-state__icon { font-size: 40px; margin-bottom: 14px; }
+    .empty-state__text { font-size: 15px; }
+
+    /* ── Pagination ── */
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding-top: 40px;
+    }
+
+    .page-btn {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      font-family: var(--font);
+    }
+
+    .page-btn:hover { color: var(--text-primary); border-color: var(--border-hover); }
+    .page-btn.is-active { color: var(--text-primary); border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.07); }
+    .page-btn--wide { width: auto; padding: 0 16px; }
+
+    /* ── Responsive ── */
+
+    @media (max-width: 1100px) {
+      .catalog-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; }
+      .sidebar__section { display: contents; }
+      .sidebar__title, .sidebar__divider, .sidebar__cta { display: none; }
+      .sidebar__link {
+        padding: 6px 12px;
+        border-radius: 100px;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+      }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .tools-grid { grid-template-columns: 1fr; }
+      .toolbar__search { display: none; }
+      .toolbar__inner { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link nav__link--active">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/tools/" class="nav__link">Инструменты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+        <a href="/comparisons/" class="nav__link">Сравнения</a>
+      </nav>
+      <div class="header__actions">
+        <div class="search-bar">
+          <svg class="search-bar__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="search-bar__placeholder">Поиск инструментов...</span>
+          <kbd class="search-bar__kbd">⌘K</kbd>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" data-lang="ru" onclick="switchLang('ru')">RU</button>
+          <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <div class="page-hero">
+      <div class="container">
+        <nav aria-label="Хлебные крошки" style="font-size:13px;color:var(--text-muted);margin-bottom:16px;display:flex;gap:8px;align-items:center;">
+          <a href="/" style="color:var(--text-muted);transition:color .2s;" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Главная</a>
+          <span>›</span>
+          <span style="color:var(--text-secondary);">AI Tools</span>
+        </nav>
+        <div class="page-hero__eyebrow">Независимые обзоры</div>
+        <h1 class="page-hero__title">Каталог AI-инструментов</h1>
+        <p class="page-hero__desc">Протестировали и оценили лучшие AI-сервисы 2024 года. Чат-боты, генераторы изображений, инструменты для кода, текста и автоматизации.</p>
+        <div class="page-hero__stats">
+          <div class="hero-stat"><strong>50+</strong> инструментов в каталоге</div>
+          <div class="hero-stat"><strong>8</strong> категорий</div>
+          <div class="hero-stat">Обновлено: декабрь 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TOOLBAR ── -->
+    <div class="toolbar">
+      <div class="container toolbar__inner">
+        <button class="filter-btn is-active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="chat">Чат-боты</button>
+        <button class="filter-btn" data-filter="image">Изображения</button>
+        <button class="filter-btn" data-filter="code">Кодинг</button>
+        <button class="filter-btn" data-filter="writing">Текст</button>
+        <button class="filter-btn" data-filter="search">Поиск</button>
+        <button class="filter-btn" data-filter="video">Видео</button>
+        <button class="filter-btn" data-filter="audio">Аудио</button>
+
+        <div class="toolbar__search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="catalogSearch" placeholder="Найти инструмент...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CATALOG ── -->
+    <div class="container">
+      <div class="catalog-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar__section">
+            <div class="sidebar__title">Категории</div>
+            <div class="sidebar__link is-active" data-filter="all">Все инструменты <span class="sidebar__count">50</span></div>
+            <div class="sidebar__link" data-filter="chat">Чат-боты <span class="sidebar__count">12</span></div>
+            <div class="sidebar__link" data-filter="image">Генерация изображений <span class="sidebar__count">9</span></div>
+            <div class="sidebar__link" data-filter="code">AI для кода <span class="sidebar__count">8</span></div>
+            <div class="sidebar__link" data-filter="writing">Написание текстов <span class="sidebar__count">7</span></div>
+            <div class="sidebar__link" data-filter="search">AI-поиск <span class="sidebar__count">5</span></div>
+            <div class="sidebar__link" data-filter="video">Видео <span class="sidebar__count">5</span></div>
+            <div class="sidebar__link" data-filter="audio">Аудио <span class="sidebar__count">4</span></div>
+          </div>
+
+          <div class="sidebar__divider"></div>
+
+          <div class="sidebar__section">
+            <div class="sidebar__title">Цена</div>
+            <div class="sidebar__link" data-filter-price="free">Бесплатные <span class="sidebar__count">14</span></div>
+            <div class="sidebar__link" data-filter-price="freemium">Freemium <span class="sidebar__count">24</span></div>
+            <div class="sidebar__link" data-filter-price="paid">Платные <span class="sidebar__count">12</span></div>
+          </div>
+
+          <div class="sidebar__divider"></div>
+
+          <div class="sidebar__section">
+            <div class="sidebar__title">Рейтинг</div>
+            <div class="sidebar__link">4.5+ звёзд</div>
+            <div class="sidebar__link">4.0+ звёзд</div>
+            <div class="sidebar__link">Все оценки</div>
+          </div>
+
+          <div class="sidebar__cta">
+            <div class="sidebar__cta-title">✨ Не знаешь что выбрать?</div>
+            <div class="sidebar__cta-desc">Пройди короткий опрос и получи персональные рекомендации</div>
+            <a href="/finder/" class="btn btn--secondary" style="width:100%;justify-content:center;font-size:13px;padding:9px 16px;">Подобрать →</a>
+          </div>
+        </aside>
+
+        <!-- Grid -->
+        <div>
+          <div class="tools-grid" id="toolsGrid">
+
+            <!-- ChatGPT -->
+            <a href="/ai-tools/chatgpt/" class="tcc" data-cat="chat" data-name="chatgpt чат gpt openai">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#10a37f;">G</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">ChatGPT</div>
+              <div class="tcc__category">Чат-бот · OpenAI</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★★</span>
+                <span class="tcc__score">4.9</span>
+                <span class="tcc__votes">(3.2K)</span>
+              </div>
+              <p class="tcc__desc">Самый популярный AI-ассистент. GPT-4o бесплатно: текст, код, изображения, голос. Огромная экосистема плагинов и GPTs.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">GPT-4o</span>
+                <span class="tcc__tag">Голос</span>
+                <span class="tcc__tag">Плагины</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://chat.openai.com" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Claude -->
+            <a href="/ai-tools/claude/" class="tcc" data-cat="chat" data-name="claude anthropic claude 3 opus sonnet">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#d97757;">C</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">Claude</div>
+              <div class="tcc__category">Чат-бот · Anthropic</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★★</span>
+                <span class="tcc__score">4.8</span>
+                <span class="tcc__votes">(2.1K)</span>
+              </div>
+              <p class="tcc__desc">Мощный AI с 200K контекста. Лучший для анализа документов, длинных текстов и задач требующих точности.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">200K контекст</span>
+                <span class="tcc__tag">Анализ</span>
+                <span class="tcc__tag">PDF</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://claude.ai" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Midjourney -->
+            <a href="/ai-tools/midjourney/" class="tcc" data-cat="image" data-name="midjourney изображения арт генерация">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#1a1a2e;color:#a78bfa;font-size:18px;">✦</div>
+                <span class="tcc__badge badge--paid">Платный</span>
+              </div>
+              <div class="tcc__name">Midjourney</div>
+              <div class="tcc__category">Генерация изображений</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★★</span>
+                <span class="tcc__score">4.9</span>
+                <span class="tcc__votes">(4.5K)</span>
+              </div>
+              <p class="tcc__desc">Лучший генератор изображений по качеству. Художественный стиль, реализм, фотореализм. От $10/мес через Discord.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">v6</span>
+                <span class="tcc__tag">Арт</span>
+                <span class="tcc__tag">Discord</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://midjourney.com" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Cursor -->
+            <a href="/ai-tools/cursor/" class="tcc" data-cat="code" data-name="cursor ide редактор код разработка">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#1a1a1a;color:#fff;font-size:20px;">⚡</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">Cursor</div>
+              <div class="tcc__category">AI-редактор кода</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★½</span>
+                <span class="tcc__score">4.7</span>
+                <span class="tcc__votes">(1.8K)</span>
+              </div>
+              <p class="tcc__desc">Fork VSCode с встроенным AI. Понимает весь проект, редактирует несколько файлов одновременно. Ускоряет разработку в 2-4 раза.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">VSCode</span>
+                <span class="tcc__tag">GPT-4</span>
+                <span class="tcc__tag">Claude</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://cursor.sh" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Perplexity -->
+            <a href="/ai-tools/perplexity/" class="tcc" data-cat="search" data-name="perplexity поиск исследование ресёрч">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#1e2a3a;color:#60a5fa;font-size:18px;">◎</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">Perplexity AI</div>
+              <div class="tcc__category">AI-поиск</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★½</span>
+                <span class="tcc__score">4.6</span>
+                <span class="tcc__votes">(1.4K)</span>
+              </div>
+              <p class="tcc__desc">AI-поисковик с реальными источниками. Отвечает на вопросы со ссылками, идеален для ресёрча и проверки фактов.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">Реальное время</span>
+                <span class="tcc__tag">Источники</span>
+                <span class="tcc__tag">Ресёрч</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://perplexity.ai" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- DALL-E 3 -->
+            <a href="/ai-tools/dalle/" class="tcc" data-cat="image" data-name="dall-e dalle изображения openai">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#10a37f;color:#fff;font-size:16px;">D·E</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">DALL-E 3</div>
+              <div class="tcc__category">Генерация изображений · OpenAI</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★</span>
+                <span class="tcc__score">4.4</span>
+                <span class="tcc__votes">(2.3K)</span>
+              </div>
+              <p class="tcc__desc">Генератор изображений внутри ChatGPT. Точно следует текстовым инструкциям, понимает сложные сцены. Доступен в бесплатном ChatGPT.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">В ChatGPT</span>
+                <span class="tcc__tag">API</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://openai.com/dall-e-3" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Gemini -->
+            <a href="/ai-tools/gemini/" class="tcc" data-cat="chat" data-name="gemini google bard чат">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:linear-gradient(135deg,#4285f4,#ea4335);color:#fff;font-size:16px;">G</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">Gemini</div>
+              <div class="tcc__category">Чат-бот · Google</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★</span>
+                <span class="tcc__score">4.3</span>
+                <span class="tcc__votes">(1.9K)</span>
+              </div>
+              <p class="tcc__desc">AI-ассистент от Google с интеграцией в Workspace. Хорошо работает с поиском и Google-сервисами. Gemini Ultra мощнее GPT-4.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">Google</span>
+                <span class="tcc__tag">Workspace</span>
+                <span class="tcc__tag">Поиск</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://gemini.google.com" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Jasper -->
+            <a href="/ai-tools/jasper/" class="tcc" data-cat="writing" data-name="jasper копирайтинг маркетинг текст">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#ff5c00;color:#fff;font-size:16px;">J</div>
+                <span class="tcc__badge badge--paid">Платный</span>
+              </div>
+              <div class="tcc__name">Jasper AI</div>
+              <div class="tcc__category">AI-копирайтинг</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★</span>
+                <span class="tcc__score">4.4</span>
+                <span class="tcc__votes">(980)</span>
+              </div>
+              <p class="tcc__desc">Специализированный AI для маркетинговых текстов. 50+ шаблонов, Brand Voice, SEO-интеграция. От $39/мес для команд.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">Маркетинг</span>
+                <span class="tcc__tag">SEO</span>
+                <span class="tcc__tag">Шаблоны</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://jasper.ai" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- GitHub Copilot -->
+            <a href="/ai-tools/github-copilot/" class="tcc" data-cat="code" data-name="copilot github код разработка автодополнение">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#1a1a1a;color:#fff;font-size:18px;">🐙</div>
+                <span class="tcc__badge badge--paid">Платный</span>
+              </div>
+              <div class="tcc__name">GitHub Copilot</div>
+              <div class="tcc__category">AI-кодинг · GitHub/Microsoft</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★½</span>
+                <span class="tcc__score">4.6</span>
+                <span class="tcc__votes">(3.1K)</span>
+              </div>
+              <p class="tcc__desc">Стандарт AI-автодополнения кода. Работает в VS Code, JetBrains, Vim. $10/мес, бесплатно для студентов.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">VS Code</span>
+                <span class="tcc__tag">JetBrains</span>
+                <span class="tcc__tag">$10/мес</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://github.com/features/copilot" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- ElevenLabs -->
+            <a href="/ai-tools/elevenlabs/" class="tcc" data-cat="audio" data-name="elevenlabs голос аудио tts озвучка">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#111;color:#fbbf24;font-size:18px;">🎙</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">ElevenLabs</div>
+              <div class="tcc__category">AI-аудио · Голос</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★★</span>
+                <span class="tcc__score">4.8</span>
+                <span class="tcc__votes">(1.2K)</span>
+              </div>
+              <p class="tcc__desc">Лучший синтез голоса. Клонирование голоса, 29 языков, аудиокниги, подкасты. Звучит как настоящий человек.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">Клонирование</span>
+                <span class="tcc__tag">29 языков</span>
+                <span class="tcc__tag">API</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://elevenlabs.io" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Runway -->
+            <a href="/ai-tools/runway/" class="tcc" data-cat="video" data-name="runway видео генерация ml">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#0a0a1a;color:#60a5fa;font-size:18px;">▶</div>
+                <span class="tcc__badge badge--freemium">Freemium</span>
+              </div>
+              <div class="tcc__name">Runway ML</div>
+              <div class="tcc__category">AI-видео</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★½</span>
+                <span class="tcc__score">4.5</span>
+                <span class="tcc__votes">(760)</span>
+              </div>
+              <p class="tcc__desc">Генерация и редактирование видео с AI. Gen-3 создаёт реалистичные клипы из текста. Используется в Hollywood.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">Gen-3</span>
+                <span class="tcc__tag">Видео из текста</span>
+                <span class="tcc__tag">Редактор</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://runwayml.com" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+            <!-- Stable Diffusion -->
+            <a href="/ai-tools/stable-diffusion/" class="tcc" data-cat="image" data-name="stable diffusion изображения open source локально">
+              <div class="tcc__head">
+                <div class="tcc__logo" style="background:#1a0a2e;color:#c084fc;font-size:18px;">◈</div>
+                <span class="tcc__badge badge--free">Бесплатно</span>
+              </div>
+              <div class="tcc__name">Stable Diffusion</div>
+              <div class="tcc__category">Генерация изображений · Open Source</div>
+              <div class="tcc__rating">
+                <span class="tcc__stars">★★★★</span>
+                <span class="tcc__score">4.3</span>
+                <span class="tcc__votes">(2.8K)</span>
+              </div>
+              <p class="tcc__desc">Открытый генератор изображений. Запускается локально, полный контроль, тысячи моделей и LoRA. Бесплатно навсегда.</p>
+              <div class="tcc__tags">
+                <span class="tcc__tag">Open Source</span>
+                <span class="tcc__tag">Локально</span>
+                <span class="tcc__tag">SDXL</span>
+              </div>
+              <div class="tcc__footer">
+                <span class="tcc__review-link">Обзор <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <a href="https://stability.ai" target="_blank" rel="nofollow noopener" class="tcc__ext-link" onclick="event.stopPropagation()">↗</a>
+              </div>
+            </a>
+
+          </div><!-- /tools-grid -->
+
+          <!-- Empty state (hidden by default) -->
+          <div class="empty-state" id="emptyState" style="display:none;">
+            <div class="empty-state__icon">🔍</div>
+            <div class="empty-state__text">Ничего не найдено. Попробуйте другой запрос.</div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button class="page-btn is-active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span style="color:var(--text-muted);font-size:13px;">…</span>
+            <button class="page-btn">6</button>
+            <button class="page-btn page-btn--wide">Ещё инструменты →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+          <p class="footer__brand-desc">Независимые обзоры и рейтинги цифровых сервисов для работы, бизнеса и безопасности.</p>
+          <div class="footer__social">
+            <a href="https://x.com/welvers" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://t.me/welvers" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+            <a href="https://youtube.com/@welvers" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__columns">
+          <div>
+            <h4 class="footer__col-title">Навигация</h4>
+            <ul class="footer__links">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/ai-tools/">AI Tools</a></li>
+              <li><a href="/vpn/">VPN</a></li>
+              <li><a href="/tools/">Инструменты</a></li>
+              <li><a href="/blog/">Блог</a></li>
+              <li><a href="/comparisons/">Сравнения</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Компания</h4>
+            <ul class="footer__links">
+              <li><a href="/about/">О нас</a></li>
+              <li><a href="/about/">Методология</a></li>
+              <li><a href="/about/">Контакты</a></li>
+              <li><a href="/legal/#affiliate">Партнёрство</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Правовая информация</h4>
+            <ul class="footer__links">
+              <li><a href="/legal/#privacy">Конфиденциальность</a></li>
+              <li><a href="/legal/#terms">Условия</a></li>
+              <li><a href="/legal/#disclaimer">Отказ от ответственности</a></li>
+              <li><a href="/legal/#affiliate">Партнёрское раскрытие</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__newsletter-title">Будьте в курсе</h4>
+          <p class="footer__newsletter-desc">Новые обзоры AI-инструментов каждую неделю</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-form__input" placeholder="your@email.com" required>
+            <button type="submit" class="newsletter-form__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2024 Welvers. Все права защищены.</span>
+        <span>Сайт содержит партнёрские ссылки — <a href="/legal/#affiliate" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">подробнее</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie">
+    <p class="cookie-banner__text">Мы используем cookie. <a href="/legal/#cookies">Подробнее</a></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--secondary btn--sm" onclick="dismissCookie()">Нет</button>
+      <button class="btn btn--primary btn--sm" onclick="acceptCookie()">OK</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ── Filter by category ──
+    const filterBtns = document.querySelectorAll('.filter-btn, .sidebar__link[data-filter]');
+    const cards = document.querySelectorAll('.tcc');
+    const emptyState = document.getElementById('emptyState');
+
+    function applyFilter(cat) {
+      let visible = 0;
+      cards.forEach(card => {
+        const match = cat === 'all' || card.dataset.cat === cat;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      emptyState.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        // sync toolbar + sidebar
+        const cat = btn.dataset.filter;
+        filterBtns.forEach(b => {
+          if (b.dataset.filter === cat) b.classList.add('is-active');
+        });
+
+        applyFilter(cat);
+      });
+    });
+
+    // ── Live search ──
+    document.getElementById('catalogSearch').addEventListener('input', function () {
+      const q = this.value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const text = (card.dataset.name || '') + ' ' + card.textContent;
+        const match = !q || text.toLowerCase().includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      emptyState.style.display = visible === 0 ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>

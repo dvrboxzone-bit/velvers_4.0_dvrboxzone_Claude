@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 — Страница не найдена | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .error-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-glow {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .error-code {
+      font-size: clamp(96px, 16vw, 168px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      line-height: 1;
+      color: transparent;
+      background: linear-gradient(155deg, #2a2a2a 0%, #111 40%, #2e2e2e 70%, #0d0d0d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-icon {
+      font-size: 44px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 440px;
+      line-height: 1.75;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Search */
+    .error-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 440px;
+      padding: 12px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 32px;
+      transition: border-color .2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-search:focus-within { border-color: var(--border-hover); }
+    .error-search svg { color: var(--text-muted); flex-shrink: 0; }
+
+    .error-search input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: var(--text-primary);
+      font-family: var(--font);
+    }
+
+    .error-search input::placeholder { color: var(--text-muted); }
+
+    .error-search button {
+      background: var(--text-primary);
+      color: #000;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: opacity .2s;
+      flex-shrink: 0;
+    }
+
+    .error-search button:hover { opacity: .88; }
+
+    .error-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Popular links */
+    .popular-block {
+      width: 100%;
+      max-width: 560px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .popular-block__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .popular-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      text-align: left;
+      transition: border-color .2s, transform .15s;
+    }
+
+    .popular-link:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+
+    .popular-link__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .popular-link__text { font-size: 13px; font-weight: 500; }
+    .popular-link__sub  { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    @media (max-width: 540px) {
+      .popular-grid { grid-template-columns: 1fr; }
+      .error-search { flex-direction: column; align-items: stretch; }
+      .error-search button { width: 100%; padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button>
+          <button class="lang-btn" onclick="switchLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ERROR CONTENT ── -->
+  <div class="error-wrap">
+    <div class="error-glow"></div>
+
+    <span class="error-icon">🧭</span>
+    <div class="error-code">404</div>
+    <h1 class="error-title">Страница не найдена</h1>
+    <p class="error-desc">
+      Страница, которую вы искали, не существует, была перемещена или удалена. Попробуйте поискать нужный материал или вернитесь на главную.
+    </p>
+
+    <div class="error-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="errorSearchInput" placeholder="Поиск инструментов и статей...">
+      <button onclick="doErrorSearch()">Найти</button>
+    </div>
+
+    <div class="error-actions">
+      <a href="/" class="btn btn--primary">
+        ← Вернуться на главную
+      </a>
+      <a href="/finder/" class="btn btn--secondary">
+        Подобрать инструмент
+      </a>
+    </div>
+
+    <div class="popular-block">
+      <div class="popular-block__title">Популярные разделы</div>
+      <div class="popular-grid">
+        <a href="/ai-tools/" class="popular-link">
+          <div class="popular-link__icon">🤖</div>
+          <div><div class="popular-link__text">AI Tools</div><div class="popular-link__sub">Каталог AI-инструментов</div></div>
+        </a>
+        <a href="/vpn/" class="popular-link">
+          <div class="popular-link__icon">🛡️</div>
+          <div><div class="popular-link__text">VPN</div><div class="popular-link__sub">Рейтинг VPN-сервисов</div></div>
+        </a>
+        <a href="/blog/" class="popular-link">
+          <div class="popular-link__icon">📝</div>
+          <div><div class="popular-link__text">Блог</div><div class="popular-link__sub">Обзоры и гайды</div></div>
+        </a>
+        <a href="/comparisons/" class="popular-link">
+          <div class="popular-link__icon">⚔️</div>
+          <div><div class="popular-link__text">Сравнения</div><div class="popular-link__sub">Детальные тесты</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer style="border-top:1px solid var(--border);padding:20px 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+      <span style="font-size:12px;color:var(--text-muted);">© 2024 Welvers. Все права защищены.</span>
+      <div style="display:flex;gap:16px;">
+        <a href="/about/" style="font-size:12px;color:var(--text-muted);">О нас</a>
+        <a href="/legal/#privacy" style="font-size:12px;color:var(--text-muted);">Конфиденциальность</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function doErrorSearch() {
+      const q = document.getElementById('errorSearchInput').value.trim();
+      if (q) window.location.href = '/search/?q=' + encodeURIComponent(q);
+    }
+    document.getElementById('errorSearchInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') doErrorSearch();
+    });
+  </script>
+</body>
+</html>

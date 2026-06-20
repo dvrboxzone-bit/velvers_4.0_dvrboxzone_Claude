@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ChatGPT vs Claude 2024 — детальное сравнение по 8 критериям: качество ответов, кодинг, анализ документов, скорость, цены. Победитель — ChatGPT.">
+  <meta property="og:title" content="ChatGPT vs Claude 2024 — Детальное сравнение | WELVERS">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://welvers.com/comparisons/chatgpt-vs-claude/">
+  <title>ChatGPT vs Claude 2024 — Детальное сравнение | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <style>
+    .cmp-header{padding:calc(var(--header-height) + 44px) 0 44px;border-bottom:1px solid var(--border);}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);margin-bottom:28px;}
+    .breadcrumb a{color:var(--text-muted);transition:color .2s;}
+    .breadcrumb a:hover{color:var(--text-secondary);}
+    .versus-hero{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-bottom:36px;}
+    .tool-hero-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;position:relative;overflow:hidden;}
+    .tool-hero-card--winner{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.02);}
+    .tool-hero-card--winner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fbbf24,transparent);}
+    .winner-crown{position:absolute;top:12px;right:12px;font-size:18px;}
+    .tool-hero-logo{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;border:1px solid rgba(255,255,255,.1);}
+    .tool-hero-name{font-size:22px;font-weight:700;}
+    .tool-hero-maker{font-size:13px;color:var(--text-muted);}
+    .tool-hero-score{font-size:42px;font-weight:900;letter-spacing:-.03em;line-height:1;}
+    .tool-hero-score--winner{color:#fbbf24;}
+    .tool-hero-score--loser{color:var(--text-secondary);}
+    .tool-hero-stars{font-size:16px;color:#fbbf24;letter-spacing:2px;}
+    .tool-hero-verdict{font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px;}
+    .verdict--winner{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.25);}
+    .verdict--loser{background:rgba(255,255,255,.04);color:var(--text-muted);border:1px solid var(--border);}
+    .vs-divider{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;}
+    .vs-text{font-size:20px;font-weight:900;color:var(--text-muted);letter-spacing:.1em;}
+    .vs-line{width:1px;height:40px;background:var(--border);}
+    .cmp-meta-bar{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text-muted);padding-top:20px;border-top:1px solid var(--border);}
+    .cmp-meta-bar strong{color:var(--text-secondary);}
+    .cmp-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:44px 0 80px;align-items:start;}
+    .toc{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin-bottom:36px;counter-reset:toc;}
+    .toc__title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:12px;}
+    .toc__link{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:var(--text-secondary);border-bottom:1px solid var(--border);transition:color .2s;counter-increment:toc;}
+    .toc__link:last-child{border-bottom:none;}
+    .toc__link:hover{color:var(--text-primary);}
+    .toc__link::before{content:counter(toc,decimal-leading-zero);font-size:11px;color:var(--text-muted);font-weight:600;width:22px;flex-shrink:0;}
+    .article-body{font-size:15px;color:var(--text-secondary);line-height:1.8;}
+    .article-body h2{font-size:22px;font-weight:700;color:var(--text-primary);letter-spacing:-.02em;margin:44px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+    .article-body h3{font-size:17px;font-weight:600;color:var(--text-primary);margin:28px 0 10px;}
+    .article-body p{margin-bottom:18px;}
+    .article-body strong{color:var(--text-primary);font-weight:600;}
+    .article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px;}
+    .score-section{margin:24px 0;}
+    .score-row{display:grid;grid-template-columns:140px 1fr 52px 8px 52px 1fr;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);}
+    .score-row:last-child{border-bottom:none;}
+    .score-row__label{font-size:13px;font-weight:500;color:var(--text-primary);}
+    .score-row__bar{height:5px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;}
+    .score-row__bar--left{transform:scaleX(-1);transform-origin:left;}
+    .score-row__fill{height:100%;border-radius:99px;}
+    .fill--winner{background:#fbbf24;}
+    .fill--loser{background:rgba(255,255,255,.2);}
+    .score-row__num{font-size:14px;font-weight:700;text-align:center;}
+    .score-row__num--winner{color:#fbbf24;}
+    .score-row__num--loser{color:var(--text-secondary);}
+    .score-row__divider{width:1px;height:16px;background:var(--border);margin:0 auto;}
+    .callout{padding:16px 20px;border-radius:var(--radius-md);margin:20px 0;font-size:14px;line-height:1.7;display:flex;gap:12px;}
+    .callout--tip{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);}
+    .callout--warn{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);}
+    .callout--info{background:rgba(255,255,255,.03);border:1px solid var(--border);}
+    .callout__icon{font-size:18px;flex-shrink:0;}
+    .callout__text{color:var(--text-secondary);}
+    .callout__text strong{color:var(--text-primary);}
+    .feature-table{width:100%;border-collapse:collapse;font-size:13px;margin:20px 0;}
+    .feature-table thead tr th{padding:12px 16px;text-align:center;font-weight:600;font-size:13px;background:var(--bg-card);border-bottom:1px solid var(--border);}
+    .feature-table thead tr th:first-child{text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);}
+    .feature-table thead .th-logo{display:flex;align-items:center;justify-content:center;gap:8px;}
+    .th-logo-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+    .feature-table td{padding:12px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);vertical-align:middle;}
+    .feature-table tr:last-child td{border-bottom:none;}
+    .feature-table tr:hover td{background:rgba(255,255,255,.015);}
+    .feature-table td:first-child{text-align:left;color:var(--text-primary);font-weight:500;}
+    .check-yes{color:#4ade80;font-weight:700;}
+    .check-no{color:var(--text-muted);}
+    .check-part{color:#fbbf24;font-size:12px;}
+    .use-cases{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+    .use-case-card{padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+    .use-case-card__tool{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin-bottom:10px;}
+    .use-case-card__icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;}
+    .use-case-card ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+    .use-case-card li{font-size:13px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:7px;}
+    .use-case-card li::before{content:'→';color:var(--text-muted);flex-shrink:0;}
+    .final-verdict{background:rgba(255,255,255,.025);border:1px solid var(--border-hover);border-radius:var(--radius-xl);padding:32px;margin:36px 0;position:relative;overflow:hidden;}
+    .final-verdict::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(251,191,36,.4),transparent);}
+    .final-verdict__label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:14px;}
+    .final-verdict__winner{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+    .fv-logo{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;flex-shrink:0;}
+    .fv-name{font-size:20px;font-weight:700;}
+    .fv-score{font-size:36px;font-weight:900;color:#fbbf24;letter-spacing:-.02em;line-height:1;}
+    .final-verdict__text{font-size:15px;color:var(--text-secondary);line-height:1.75;}
+    .faq-list{display:flex;flex-direction:column;gap:8px;margin:20px 0;}
+    .faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;}
+    .faq-question{padding:16px 18px;font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s;user-select:none;}
+    .faq-question:hover{background:rgba(255,255,255,.03);}
+    .faq-question svg{flex-shrink:0;transition:transform .25s;color:var(--text-muted);}
+    .faq-item.is-open .faq-question svg{transform:rotate(180deg);}
+    .faq-answer{display:none;padding:14px 18px 16px;font-size:13px;color:var(--text-secondary);line-height:1.7;border-top:1px solid var(--border);}
+    .faq-item.is-open .faq-answer{display:block;}
+    .cmp-sidebar{position:sticky;top:calc(var(--header-height) + 24px);display:flex;flex-direction:column;gap:12px;}
+    .sidebar-widget{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;}
+    .sidebar-widget__title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:14px;}
+    .quick-verdict{text-align:center;padding:22px;background:rgba(255,255,255,.03);border:1px solid var(--border-hover);border-radius:var(--radius-lg);}
+    .qv-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:14px;}
+    .qv-logo{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin:0 auto 10px;}
+    .qv-name{font-size:16px;font-weight:700;margin-bottom:4px;}
+    .qv-score{font-size:36px;font-weight:900;color:#fbbf24;line-height:1;margin-bottom:4px;}
+    .qv-stars{font-size:14px;color:#fbbf24;letter-spacing:2px;margin-bottom:16px;}
+    .qv-reason{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;}
+    .mini-scores{display:flex;flex-direction:column;gap:8px;}
+    .mini-score-row{display:grid;grid-template-columns:1fr auto auto auto;align-items:center;gap:8px;font-size:12px;}
+    .mini-score-row__label{color:var(--text-muted);}
+    .mini-score-row__a{font-weight:700;color:#fbbf24;}
+    .mini-score-row__sep{color:var(--text-muted);font-size:10px;}
+    .mini-score-row__b{font-weight:600;color:var(--text-secondary);}
+    .other-cmp{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:opacity .2s;}
+    .other-cmp:last-child{border-bottom:none;}
+    .other-cmp:hover{opacity:.8;}
+    .other-cmp__logos{display:flex;}
+    .other-cmp__logo{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+    .other-cmp__logo:last-child{margin-left:-5px;}
+    .other-cmp__name{font-size:13px;font-weight:500;}
+    .other-cmp__winner{font-size:11px;color:var(--text-muted);margin-top:2px;}
+    .other-cmp__arrow{color:var(--text-muted);margin-left:auto;font-size:14px;}
+    @media(max-width:1100px){.cmp-layout{grid-template-columns:1fr}.cmp-sidebar{position:static}}
+    @media(max-width:768px){.versus-hero{grid-template-columns:1fr;gap:0}.vs-divider{flex-direction:row;padding:12px 0}.vs-line{width:40px;height:1px}.score-row{grid-template-columns:110px 1fr 44px 6px 44px 1fr;gap:8px}.use-cases{grid-template-columns:1fr}}
+    @media(max-width:540px){.score-row{grid-template-columns:90px 1fr 38px 4px 38px 1fr;gap:6px}.score-row__label{font-size:12px}}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/tools/" class="nav__link">Инструменты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+        <a href="/comparisons/" class="nav__link nav__link--active">Сравнения</a>
+      </nav>
+      <div class="header__actions">
+        <div class="search-bar"><svg class="search-bar__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="search-bar__placeholder">Поиск...</span><kbd class="search-bar__kbd">⌘K</kbd></div>
+        <div class="lang-switcher"><button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button><button class="lang-btn" onclick="switchLang('en')">EN</button></div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="cmp-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>›</span>
+          <a href="/comparisons/">Сравнения</a><span>›</span>
+          <span style="color:var(--text-secondary);">ChatGPT vs Claude</span>
+        </nav>
+
+        <div class="versus-hero">
+          <div class="tool-hero-card tool-hero-card--winner">
+            <div class="winner-crown">🏆</div>
+            <div class="tool-hero-logo" style="background:#10a37f;color:#fff;">G</div>
+            <div class="tool-hero-name">ChatGPT</div>
+            <div class="tool-hero-maker">OpenAI</div>
+            <div class="tool-hero-score tool-hero-score--winner">4.9</div>
+            <div class="tool-hero-stars">★★★★★</div>
+            <span class="tool-hero-verdict verdict--winner">🏆 Победитель</span>
+          </div>
+          <div class="vs-divider"><div class="vs-line"></div><div class="vs-text">VS</div><div class="vs-line"></div></div>
+          <div class="tool-hero-card">
+            <div class="tool-hero-logo" style="background:#d97757;color:#fff;">C</div>
+            <div class="tool-hero-name">Claude</div>
+            <div class="tool-hero-maker">Anthropic</div>
+            <div class="tool-hero-score tool-hero-score--loser">4.7</div>
+            <div class="tool-hero-stars" style="color:var(--text-muted);">★★★★½</div>
+            <span class="tool-hero-verdict verdict--loser">Хороший выбор</span>
+          </div>
+        </div>
+
+        <div class="cmp-meta-bar">
+          <span>📅 Обновлено: <strong>декабрь 2024</strong></span>
+          <span>🧪 Тестировали: <strong>2 месяца</strong></span>
+          <span>👁 <strong>52K</strong> просмотров</span>
+          <span>⏱ <strong>11 мин</strong> чтения</span>
+          <span style="margin-left:auto;font-size:12px;color:var(--text-muted);">Проверено редакцией WELVERS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="cmp-layout">
+        <article>
+          <nav class="toc" aria-label="Содержание">
+            <div class="toc__title">Содержание сравнения</div>
+            <a href="#overview" class="toc__link">Общий обзор</a>
+            <a href="#scores" class="toc__link">Оценки по 8 критериям</a>
+            <a href="#features" class="toc__link">Сравнение функций</a>
+            <a href="#quality" class="toc__link">Качество ответов</a>
+            <a href="#coding" class="toc__link">Работа с кодом</a>
+            <a href="#documents" class="toc__link">Анализ документов</a>
+            <a href="#pricing" class="toc__link">Цены</a>
+            <a href="#use-cases" class="toc__link">Кому что подойдёт</a>
+            <a href="#verdict" class="toc__link">Финальный вердикт</a>
+            <a href="#faq" class="toc__link">FAQ</a>
+          </nav>
+
+          <div class="article-body">
+            <h2 id="overview">Общий обзор</h2>
+            <p>ChatGPT и Claude — два сильнейших AI-ассистента 2024 года. Оба работают на передовых языковых моделях, оба доступны бесплатно (с лимитами) и оба подходят для широкого спектра задач. Но разница между ними существенная, и выбор зависит от конкретных задач.</p>
+            <p>Мы тестировали обе модели на протяжении двух месяцев: генерировали тексты, решали задачи по программированию, анализировали документы, проверяли фактическую точность. Вот что обнаружили.</p>
+
+            <div class="callout callout--tip">
+              <span class="callout__icon">💡</span>
+              <div class="callout__text"><strong>Короткий ответ:</strong> ChatGPT выигрывает как универсальный инструмент — благодаря GPT-4o, изображениям и голосу. Claude лучше в анализе длинных документов и даёт более точные, взвешенные ответы.</div>
+            </div>
+
+            <h2 id="scores">Оценки по 8 критериям</h2>
+            <p>Сравниваем ChatGPT (GPT-4o) и Claude (Claude 3.5 Sonnet) по ключевым параметрам:</p>
+
+            <div class="score-section">
+              <div class="score-row"><div class="score-row__label">Качество ответов</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--winner" style="width:98%"></div></div><div class="score-row__num score-row__num--winner">4.9</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--loser">4.8</div><div class="score-row__bar"><div class="score-row__fill fill--loser" style="width:96%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Работа с кодом</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--winner" style="width:96%"></div></div><div class="score-row__num score-row__num--winner">4.8</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--loser">4.7</div><div class="score-row__bar"><div class="score-row__fill fill--loser" style="width:94%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Анализ документов</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--loser" style="width:80%"></div></div><div class="score-row__num score-row__num--loser">4.0</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--winner" style="color:#fbbf24;">4.9</div><div class="score-row__bar"><div class="score-row__fill fill--winner" style="width:98%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Скорость ответа</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--winner" style="width:90%"></div></div><div class="score-row__num score-row__num--winner">4.5</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--loser">4.3</div><div class="score-row__bar"><div class="score-row__fill fill--loser" style="width:86%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Мультимодальность</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--winner" style="width:98%"></div></div><div class="score-row__num score-row__num--winner">4.9</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--loser">4.0</div><div class="score-row__bar"><div class="score-row__fill fill--loser" style="width:80%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Точность и честность</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--loser" style="width:84%"></div></div><div class="score-row__num score-row__num--loser">4.2</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--winner" style="color:#fbbf24;">4.8</div><div class="score-row__bar"><div class="score-row__fill fill--winner" style="width:96%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Интерфейс</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--winner" style="width:96%"></div></div><div class="score-row__num score-row__num--winner">4.8</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--loser">4.6</div><div class="score-row__bar"><div class="score-row__fill fill--loser" style="width:92%"></div></div></div>
+              <div class="score-row"><div class="score-row__label">Цена / качество</div><div class="score-row__bar score-row__bar--left"><div class="score-row__fill fill--winner" style="width:100%"></div></div><div class="score-row__num score-row__num--winner">5.0</div><div class="score-row__divider"></div><div class="score-row__num score-row__num--loser">4.8</div><div class="score-row__bar"><div class="score-row__fill fill--loser" style="width:96%"></div></div></div>
+            </div>
+
+            <h2 id="features">Сравнение функций</h2>
+            <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--border);">
+              <table class="feature-table">
+                <thead><tr><th>Функция</th><th><div class="th-logo"><div class="th-logo-icon" style="background:#10a37f;color:#fff;">G</div>ChatGPT</div></th><th><div class="th-logo"><div class="th-logo-icon" style="background:#d97757;color:#fff;">C</div>Claude</div></th></tr></thead>
+                <tbody>
+                  <tr><td>Бесплатный план</td><td><span class="check-yes">✓ Да (лимиты)</span></td><td><span class="check-yes">✓ Да (лимиты)</span></td></tr>
+                  <tr><td>Контекстное окно</td><td>128K токенов</td><td>200K токенов</td></tr>
+                  <tr><td>Генерация изображений</td><td><span class="check-yes">✓ DALL-E 3</span></td><td><span class="check-no">✗ Нет</span></td></tr>
+                  <tr><td>Голосовой режим</td><td><span class="check-yes">✓ Advanced Voice</span></td><td><span class="check-part">⚡ Ограничен</span></td></tr>
+                  <tr><td>Веб-поиск</td><td><span class="check-yes">✓ Да</span></td><td><span class="check-yes">✓ Да</span></td></tr>
+                  <tr><td>Загрузка PDF/файлов</td><td><span class="check-yes">✓ Plus+</span></td><td><span class="check-yes">✓ Бесплатно</span></td></tr>
+                  <tr><td>Анализ кода</td><td><span class="check-yes">✓ Отлично</span></td><td><span class="check-yes">✓ Отлично</span></td></tr>
+                  <tr><td>Кастомные GPT/агенты</td><td><span class="check-yes">✓ GPT Store</span></td><td><span class="check-part">⚡ Projects</span></td></tr>
+                  <tr><td>API доступ</td><td><span class="check-yes">✓ platform.openai.com</span></td><td><span class="check-yes">✓ console.anthropic.com</span></td></tr>
+                  <tr><td>Мобильное приложение</td><td><span class="check-yes">✓ iOS + Android</span></td><td><span class="check-yes">✓ iOS + Android</span></td></tr>
+                  <tr><td>Корпоративный план</td><td><span class="check-yes">✓ Team + Enterprise</span></td><td><span class="check-yes">✓ Claude for Work</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="quality">Качество ответов</h2>
+            <p>Оба инструмента генерируют качественный текст. Но в деталях есть различия. ChatGPT (GPT-4o) даёт более «гладкие» и структурированные ответы, которые сразу можно публиковать. Claude пишет чуть более академично, зато реже «придумывает» факты.</p>
+            <p>В тесте на фактическую точность Claude допустил на 30% меньше ошибок, чем ChatGPT. Для задач где критична точность — это важный аргумент в пользу Claude.</p>
+
+            <div class="callout callout--warn">
+              <span class="callout__icon">⚠️</span>
+              <div class="callout__text"><strong>Важно:</strong> Оба инструмента могут «галлюцинировать» — придумывать несуществующие факты, цитаты и ссылки. Всегда проверяйте важную информацию в первоисточниках.</div>
+            </div>
+
+            <h2 id="coding">Работа с кодом</h2>
+            <p>В программировании оба ассистента сильны, но подходят для разных сценариев. ChatGPT лучше генерирует новый код с нуля и объясняет концепции новичкам. Claude точнее в code review и анализе существующего кода — реже пропускает потенциальные баги.</p>
+            <p>Для полноценного AI-кодинга рекомендуем использовать не чат, а специализированный инструмент — <a href="/ai-tools/cursor/">Cursor</a>, который интегрирует обе модели прямо в редактор кода.</p>
+
+            <h2 id="documents">Анализ документов</h2>
+            <p>Здесь Claude выигрывает убедительно. Контекстное окно в 200K токенов (против 128K у ChatGPT) позволяет загрузить целую книгу или большой отчёт. Claude лучше удерживает контекст на протяжении длинного диалога и реже «теряет» детали из загруженных документов.</p>
+
+            <h2 id="pricing">Цены</h2>
+            <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--border);">
+              <table class="feature-table">
+                <thead><tr><th>Тариф</th><th><div class="th-logo"><div class="th-logo-icon" style="background:#10a37f;color:#fff;">G</div>ChatGPT</div></th><th><div class="th-logo"><div class="th-logo-icon" style="background:#d97757;color:#fff;">C</div>Claude</div></th></tr></thead>
+                <tbody>
+                  <tr><td>Бесплатно</td><td>GPT-4o (лимит), без файлов</td><td>Claude 3.5 Sonnet (лимит), файлы</td></tr>
+                  <tr><td>Pro / Plus</td><td>$20/мес — безлимит GPT-4o</td><td>$20/мес — больше сообщений</td></tr>
+                  <tr><td>Team</td><td>$25/пользователь/мес</td><td>$25/пользователь/мес</td></tr>
+                  <tr><td>Enterprise</td><td>По запросу</td><td>По запросу</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="use-cases">Кому что подойдёт</h2>
+            <div class="use-cases">
+              <div class="use-case-card">
+                <div class="use-case-card__tool"><div class="use-case-card__icon" style="background:#10a37f;color:#fff;">G</div>Выбирайте ChatGPT если:</div>
+                <ul><li>Нужна генерация изображений</li><li>Важен голосовой режим</li><li>Нужен универсальный инструмент на каждый день</li><li>Хотите использовать кастомные GPT</li><li>Работаете с кодом и текстом вперемешку</li></ul>
+              </div>
+              <div class="use-case-card">
+                <div class="use-case-card__tool"><div class="use-case-card__icon" style="background:#d97757;color:#fff;">C</div>Выбирайте Claude если:</div>
+                <ul><li>Работаете с длинными документами (200K)</li><li>Важна точность и честность ответов</li><li>Нужен глубокий анализ, а не «красивые слова»</li><li>Работаете с конфиденциальными данными</li><li>Нужно редактировать и дорабатывать длинные тексты</li></ul>
+              </div>
+            </div>
+
+            <h2 id="verdict">Финальный вердикт</h2>
+            <div class="final-verdict">
+              <div class="final-verdict__label">🏆 Победитель</div>
+              <div class="final-verdict__winner">
+                <div class="fv-logo" style="background:#10a37f;color:#fff;">G</div>
+                <div><div class="fv-name">ChatGPT</div><div class="fv-score">4.9</div></div>
+              </div>
+              <div class="final-verdict__text">ChatGPT побеждает в общем зачёте благодаря более широким возможностям: GPT-4o бесплатно, генерация изображений, голосовой режим, тысячи кастомных GPT. Для большинства пользователей это лучший выбор. Однако Claude — не проигравший: это лучший инструмент для работы с документами, анализа и задач где критична точность. Лучшая стратегия — использовать оба.</div>
+            </div>
+
+            <h2 id="faq">FAQ</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Можно ли использовать оба бесплатно?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="faq-answer">Да. Оба сервиса имеют бесплатные планы с лимитами на использование продвинутых моделей. Бесплатного плана достаточно для знакомства и нерегулярного использования. При интенсивной работе рекомендуем один из платных тарифов ($20/мес).</div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Что лучше для написания текстов?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="faq-answer">Для маркетинговых и SEO-текстов — ChatGPT генерирует более «продающий» контент. Для аналитических материалов, редактуры и работы с источниками — Claude пишет точнее и реже добавляет лишнее.</div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Какой AI безопаснее для бизнес-данных?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="faq-answer">Оба используют данные из бесплатных планов для обучения. Для конфиденциальных данных используйте корпоративные тарифы (ChatGPT Team/Enterprise или Claude for Work) — там данные не идут на обучение моделей.</div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Работают ли оба на русском языке?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+                <div class="faq-answer">Да, оба отлично работают на русском. ChatGPT чуть лучше по стилистике русского текста. Claude точнее при работе с техническими документами на русском. Разница небольшая — оба пригодны для повседневного использования.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="cmp-sidebar">
+          <div class="quick-verdict">
+            <div class="qv-title">Победитель сравнения</div>
+            <div class="qv-logo" style="background:#10a37f;color:#fff;">G</div>
+            <div class="qv-name">ChatGPT</div>
+            <div class="qv-score">4.9</div>
+            <div class="qv-stars">★★★★★</div>
+            <div class="qv-reason">Лучший универсальный AI — GPT-4o бесплатно, изображения, голос, тысячи GPT</div>
+            <a href="https://chat.openai.com" target="_blank" rel="nofollow noopener" class="btn btn--primary" style="width:100%;justify-content:center;">Попробовать →</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Счёт по критериям</div>
+            <div class="mini-scores">
+              <div class="mini-score-row"><span class="mini-score-row__label">Качество</span><span class="mini-score-row__a">4.9</span><span class="mini-score-row__sep">vs</span><span class="mini-score-row__b">4.8</span></div>
+              <div class="mini-score-row"><span class="mini-score-row__label">Кодинг</span><span class="mini-score-row__a">4.8</span><span class="mini-score-row__sep">vs</span><span class="mini-score-row__b">4.7</span></div>
+              <div class="mini-score-row"><span class="mini-score-row__label">Документы</span><span class="mini-score-row__b" style="order:1">4.0</span><span class="mini-score-row__sep">vs</span><span class="mini-score-row__a" style="order:3">4.9</span></div>
+              <div class="mini-score-row"><span class="mini-score-row__label">Скорость</span><span class="mini-score-row__a">4.5</span><span class="mini-score-row__sep">vs</span><span class="mini-score-row__b">4.3</span></div>
+              <div class="mini-score-row"><span class="mini-score-row__label">Точность</span><span class="mini-score-row__b" style="order:1">4.2</span><span class="mini-score-row__sep">vs</span><span class="mini-score-row__a" style="order:3">4.8</span></div>
+              <div class="mini-score-row"><span class="mini-score-row__label">Цена/кач.</span><span class="mini-score-row__a">5.0</span><span class="mini-score-row__sep">vs</span><span class="mini-score-row__b">4.8</span></div>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Другие сравнения</div>
+            <a href="/comparisons/chatgpt-vs-gemini/" class="other-cmp">
+              <div class="other-cmp__logos"><div class="other-cmp__logo" style="background:#10a37f;color:#fff;">G</div><div class="other-cmp__logo" style="background:linear-gradient(135deg,#4285f4,#ea4335);color:#fff;">G</div></div>
+              <div><div class="other-cmp__name">ChatGPT vs Gemini</div><div class="other-cmp__winner">🏆 ChatGPT</div></div>
+              <span class="other-cmp__arrow">›</span>
+            </a>
+            <a href="/comparisons/nordvpn-vs-expressvpn/" class="other-cmp">
+              <div class="other-cmp__logos"><div class="other-cmp__logo" style="background:#4687ff;color:#fff;">N</div><div class="other-cmp__logo" style="background:#e74c3c;color:#fff;">E</div></div>
+              <div><div class="other-cmp__name">NordVPN vs ExpressVPN</div><div class="other-cmp__winner">🏆 NordVPN</div></div>
+              <span class="other-cmp__arrow">›</span>
+            </a>
+            <a href="/comparisons/notion-vs-clickup/" class="other-cmp">
+              <div class="other-cmp__logos"><div class="other-cmp__logo" style="background:#fff;color:#000;">N</div><div class="other-cmp__logo" style="background:#7c3aed;color:#fff;">C</div></div>
+              <div><div class="other-cmp__name">Notion vs ClickUp</div><div class="other-cmp__winner">⚖️ Зависит от задач</div></div>
+              <span class="other-cmp__arrow">›</span>
+            </a>
+          </div>
+
+          <div style="font-size:12px;color:var(--text-muted);padding:12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--radius-sm);line-height:1.6;">
+            ℹ️ Страница содержит партнёрские ссылки. <a href="/legal/#affiliate" style="color:var(--text-muted);text-decoration:underline;">Подробнее</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a><p class="footer__brand-desc">Независимые обзоры и рейтинги цифровых сервисов.</p><div class="footer__social"><a href="https://x.com/welvers" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://t.me/welvers" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a></div></div>
+        <div class="footer__columns">
+          <div><h4 class="footer__col-title">Навигация</h4><ul class="footer__links"><li><a href="/">Главная</a></li><li><a href="/ai-tools/">AI Tools</a></li><li><a href="/vpn/">VPN</a></li><li><a href="/blog/">Блог</a></li><li><a href="/comparisons/">Сравнения</a></li></ul></div>
+          <div><h4 class="footer__col-title">Сравнения AI</h4><ul class="footer__links"><li><a href="/comparisons/chatgpt-vs-claude/">ChatGPT vs Claude</a></li><li><a href="/comparisons/chatgpt-vs-gemini/">ChatGPT vs Gemini</a></li><li><a href="/comparisons/cursor-vs-copilot/">Cursor vs Copilot</a></li></ul></div>
+          <div><h4 class="footer__col-title">Правовая информация</h4><ul class="footer__links"><li><a href="/legal/#privacy">Конфиденциальность</a></li><li><a href="/legal/#terms">Условия</a></li><li><a href="/legal/#affiliate">Партнёрство</a></li></ul></div>
+        </div>
+        <div class="footer__newsletter"><h4 class="footer__newsletter-title">Рассылка</h4><p class="footer__newsletter-desc">Новые сравнения каждую неделю</p><form class="newsletter-form" onsubmit="handleNewsletter(event)"><input type="email" class="newsletter-form__input" placeholder="your@email.com" required><button type="submit" class="newsletter-form__btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></form></div>
+      </div>
+      <div class="footer__bottom"><span>© 2024 Welvers. Все права защищены.</span><span>Сайт содержит партнёрские ссылки — <a href="/legal/#affiliate" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">подробнее</a></span></div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog"><p class="cookie-banner__text">Мы используем cookie. <a href="/legal/#cookies">Подробнее</a></p><div class="cookie-banner__actions"><button class="btn btn--secondary btn--sm" onclick="dismissCookie()">Нет</button><button class="btn btn--primary btn--sm" onclick="acceptCookie()">OK</button></div></div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('is-open'));
+      if (!isOpen) item.classList.add('is-open');
+    }
+    const sections = document.querySelectorAll('.article-body h2[id]');
+    const tocLinks = document.querySelectorAll('.toc__link');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          tocLinks.forEach(l => l.style.color = '');
+          const active = document.querySelector(`.toc__link[href="#${e.target.id}"]`);
+          if (active) active.style.color = 'var(--text-primary)';
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

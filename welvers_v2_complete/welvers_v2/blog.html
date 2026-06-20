@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Блог WELVERS — статьи об AI-инструментах, VPN, цифровых продуктах. Обзоры, гайды, сравнения и советы экспертов.">
+  <meta property="og:title" content="Блог — Статьи об AI и цифровых инструментах | WELVERS">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://welvers.com/blog/">
+  <title>Блог — AI, VPN и цифровые инструменты | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-hero {
+      padding: calc(var(--header-height) + 52px) 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero__eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-hero__eyebrow::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--text-muted);
+    }
+
+    .page-hero__title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-hero__desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    /* ── Toolbar ── */
+    .toolbar {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 50;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .toolbar__inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: color .2s, border-color .2s, background .2s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .filter-btn:hover { color: var(--text-secondary); border-color: var(--border-hover); }
+    .filter-btn.is-active { color: var(--text-primary); border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.07); }
+
+    /* ── Blog layout ── */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      padding: 48px 0 80px;
+      align-items: start;
+    }
+
+    /* ── Featured article ── */
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 32px;
+      transition: border-color .2s, transform .15s;
+      cursor: pointer;
+    }
+
+    .featured-article:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .featured-article__image {
+      background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #0f3460 100%);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-article__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, rgba(8,8,8,.4));
+    }
+
+    .featured-article__body {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-article__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .featured-label__tag {
+      padding: 2px 8px;
+      background: rgba(96,165,250,.1);
+      border: 1px solid rgba(96,165,250,.2);
+      border-radius: 4px;
+      color: #60a5fa;
+    }
+
+    .featured-article__title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .featured-article__desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .featured-article__meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-muted); }
+
+    /* ── Articles grid ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color .2s, transform .15s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .article-card__thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .article-card__thumb::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(15,15,15,.7), transparent);
+    }
+
+    .thumb--ai          { background: linear-gradient(135deg, #0d0d1a, #1a1a2e); }
+    .thumb--vpn         { background: linear-gradient(135deg, #0d1b2a, #1b263b); }
+    .thumb--productivity{ background: linear-gradient(135deg, #111, #1c1c1c);    }
+    .thumb--skills      { background: linear-gradient(135deg, #1c1917, #292524); }
+    .thumb--comparison  { background: linear-gradient(135deg, #0a0a1a, #111);    }
+    .thumb--tools       { background: linear-gradient(135deg, #0d1a0d, #1a2e1a); }
+
+    .article-card__body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .article-card__tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .article-card__title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+
+    .article-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    /* ── List articles (below grid) ── */
+    .articles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .list-article {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      background: var(--bg-secondary);
+      transition: background .2s;
+      cursor: pointer;
+    }
+
+    .list-article:hover { background: var(--bg-card); }
+
+    .list-article__num {
+      font-size: 22px;
+      font-weight: 800;
+      color: rgba(255,255,255,.06);
+      width: 36px;
+      flex-shrink: 0;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .list-article__thumb {
+      width: 64px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .list-article__body { flex: 1; min-width: 0; }
+
+    .list-article__tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .list-article__title {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .list-article__meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .list-article__arrow {
+      color: var(--text-muted);
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    /* ── Load more ── */
+    .load-more {
+      display: flex;
+      justify-content: center;
+      padding: 8px 0 24px;
+    }
+
+    /* ── Sidebar ── */
+    .blog-sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 57px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidebar-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    .sidebar-widget__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* Popular topics */
+    .topic-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .topic-tag {
+      padding: 5px 11px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+
+    .topic-tag:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
+    /* Popular posts */
+    .popular-post {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .popular-post:last-child { border-bottom: none; }
+
+    .popular-post__num {
+      font-size: 20px;
+      font-weight: 800;
+      color: rgba(255,255,255,.08);
+      width: 24px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .popular-post__title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      transition: color .2s;
+    }
+
+    .popular-post:hover .popular-post__title { color: var(--text-primary); }
+    .popular-post__views { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+    /* Newsletter widget */
+    .nl-widget {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      text-align: center;
+    }
+
+    .nl-widget__icon  { font-size: 32px; margin-bottom: 10px; }
+    .nl-widget__title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .nl-widget__desc  { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
+    .nl-widget__form  { display: flex; flex-direction: column; gap: 8px; }
+
+    .nl-widget__input {
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-family: var(--font);
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .nl-widget__input::placeholder { color: var(--text-muted); }
+    .nl-widget__input:focus { border-color: var(--border-hover); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .blog-layout { grid-template-columns: 1fr; }
+      .blog-sidebar { position: static; }
+    }
+
+    @media (max-width: 768px) {
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-article__image { min-height: 180px; }
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .toolbar__inner { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/tools/" class="nav__link">Инструменты</a>
+        <a href="/blog/" class="nav__link nav__link--active">Блог</a>
+        <a href="/comparisons/" class="nav__link">Сравнения</a>
+      </nav>
+      <div class="header__actions">
+        <div class="search-bar">
+          <svg class="search-bar__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="search-bar__placeholder">Поиск статей...</span>
+          <kbd class="search-bar__kbd">⌘K</kbd>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button>
+          <button class="lang-btn" onclick="switchLang('en')">EN</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <div class="page-hero">
+      <div class="container">
+        <nav aria-label="Хлебные крошки" style="font-size:13px;color:var(--text-muted);margin-bottom:16px;display:flex;gap:8px;">
+          <a href="/" style="color:var(--text-muted);transition:color .2s" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-muted)'">Главная</a>
+          <span>›</span>
+          <span style="color:var(--text-secondary);">Блог</span>
+        </nav>
+        <div class="page-hero__eyebrow">Материалы редакции</div>
+        <h1 class="page-hero__title">Блог WELVERS</h1>
+        <p class="page-hero__desc">Обзоры, гайды и сравнения AI-инструментов, VPN и цифровых сервисов. Пишем только о том, что тестировали сами.</p>
+      </div>
+    </div>
+
+    <!-- ── TOOLBAR ── -->
+    <div class="toolbar">
+      <div class="container toolbar__inner">
+        <button class="filter-btn is-active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="ai">🤖 AI Tools</button>
+        <button class="filter-btn" data-filter="vpn">🛡️ VPN</button>
+        <button class="filter-btn" data-filter="productivity">⚡ Продуктивность</button>
+        <button class="filter-btn" data-filter="skills">💡 Скиллы</button>
+        <button class="filter-btn" data-filter="comparison">⚔️ Сравнения</button>
+      </div>
+    </div>
+
+    <!-- ── CONTENT ── -->
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- Main column -->
+        <main>
+
+          <!-- Featured -->
+          <a href="/blog/best-ai-tools-2024/" class="featured-article">
+            <div class="featured-article__image">🤖</div>
+            <div class="featured-article__body">
+              <div class="featured-article__label">
+                ⭐ Главный материал
+                <span class="featured-label__tag">AI Tools</span>
+              </div>
+              <h2 class="featured-article__title">Лучшие AI-инструменты для работы в 2024 году — полный разбор</h2>
+              <p class="featured-article__desc">Протестировали 30+ AI-сервисов на реальных задачах. Честный разбор ChatGPT, Claude, Midjourney и других — без рекламы.</p>
+              <div class="featured-article__meta">
+                <span>15 дек 2024</span>
+                <div class="meta-dot"></div>
+                <span>12 мин чтения</span>
+                <div class="meta-dot"></div>
+                <span>👁 45K</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Grid: last 4 articles -->
+          <div class="section-label">Новые статьи</div>
+          <div class="articles-grid" id="articlesGrid">
+
+            <a href="/blog/how-to-choose-vpn/" class="article-card" data-cat="vpn">
+              <div class="article-card__thumb thumb--vpn">🛡️</div>
+              <div class="article-card__body">
+                <div class="article-card__tag">VPN</div>
+                <h3 class="article-card__title">Как выбрать VPN в 2024: полное руководство</h3>
+                <div class="article-card__meta">
+                  <span>12 дек 2024</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>10 мин</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>👁 21K</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="/blog/chatgpt-prompts/" class="article-card" data-cat="ai">
+              <div class="article-card__thumb thumb--ai">💬</div>
+              <div class="article-card__body">
+                <div class="article-card__tag">AI Tools</div>
+                <h3 class="article-card__title">100 лучших промптов для ChatGPT — с примерами</h3>
+                <div class="article-card__meta">
+                  <span>10 дек 2024</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>15 мин</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>👁 38K</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="/blog/ai-for-productivity/" class="article-card" data-cat="productivity">
+              <div class="article-card__thumb thumb--productivity">⚡</div>
+              <div class="article-card__body">
+                <div class="article-card__tag">Продуктивность</div>
+                <h3 class="article-card__title">Как AI меняет продуктивность: реальные кейсы</h3>
+                <div class="article-card__meta">
+                  <span>8 дек 2024</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>8 мин</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>👁 17K</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="/blog/cursor-review/" class="article-card" data-cat="ai">
+              <div class="article-card__thumb thumb--tools">⚡</div>
+              <div class="article-card__body">
+                <div class="article-card__tag">AI Tools</div>
+                <h3 class="article-card__title">Cursor AI — лучший редактор кода 2024?</h3>
+                <div class="article-card__meta">
+                  <span>5 дек 2024</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>9 мин</span>
+                  <div class="meta-dot" style="width:3px;height:3px;border-radius:50%;background:var(--text-muted);"></div>
+                  <span>👁 12K</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- List: more articles -->
+          <div class="section-label">Популярные материалы</div>
+          <div class="articles-list">
+
+            <a href="/blog/nordvpn-review/" class="list-article" data-cat="vpn">
+              <div class="list-article__num">01</div>
+              <div class="list-article__thumb thumb--vpn">🔵</div>
+              <div class="list-article__body">
+                <div class="list-article__tag">VPN</div>
+                <div class="list-article__title">NordVPN 2024 — обзор: реально ли он лучший?</div>
+                <div class="list-article__meta">28 нояб 2024 · 8 мин · 👁 34K</div>
+              </div>
+              <span class="list-article__arrow">›</span>
+            </a>
+
+            <a href="/blog/claude-vs-chatgpt/" class="list-article" data-cat="comparison">
+              <div class="list-article__num">02</div>
+              <div class="list-article__thumb thumb--comparison">⚔️</div>
+              <div class="list-article__body">
+                <div class="list-article__tag">Сравнение</div>
+                <div class="list-article__title">Claude vs ChatGPT — кто лучше в 2024 году?</div>
+                <div class="list-article__meta">20 нояб 2024 · 11 мин · 👁 52K</div>
+              </div>
+              <span class="list-article__arrow">›</span>
+            </a>
+
+            <a href="/blog/midjourney-prompts/" class="list-article" data-cat="ai">
+              <div class="list-article__num">03</div>
+              <div class="list-article__thumb thumb--ai">🎨</div>
+              <div class="list-article__body">
+                <div class="list-article__tag">AI Tools</div>
+                <div class="list-article__title">50 лучших промптов для Midjourney v6</div>
+                <div class="list-article__meta">15 нояб 2024 · 7 мин · 👁 29K</div>
+              </div>
+              <span class="list-article__arrow">›</span>
+            </a>
+
+            <a href="/blog/ai-coding-workflow/" class="list-article" data-cat="skills">
+              <div class="list-article__num">04</div>
+              <div class="list-article__thumb thumb--skills">💻</div>
+              <div class="list-article__body">
+                <div class="list-article__tag">Скиллы</div>
+                <div class="list-article__title">AI-воркфлоу для разработчика: Cursor + Claude</div>
+                <div class="list-article__meta">10 нояб 2024 · 14 мин · 👁 18K</div>
+              </div>
+              <span class="list-article__arrow">›</span>
+            </a>
+
+            <a href="/blog/free-vpn-danger/" class="list-article" data-cat="vpn">
+              <div class="list-article__num">05</div>
+              <div class="list-article__thumb thumb--vpn">⚠️</div>
+              <div class="list-article__body">
+                <div class="list-article__tag">VPN</div>
+                <div class="list-article__title">Почему бесплатные VPN опасны — реальные факты</div>
+                <div class="list-article__meta">5 нояб 2024 · 6 мин · 👁 22K</div>
+              </div>
+              <span class="list-article__arrow">›</span>
+            </a>
+
+            <a href="/blog/notion-vs-obsidian/" class="list-article" data-cat="comparison">
+              <div class="list-article__num">06</div>
+              <div class="list-article__thumb thumb--tools">📝</div>
+              <div class="list-article__body">
+                <div class="list-article__tag">Сравнение</div>
+                <div class="list-article__title">Notion vs Obsidian — что выбрать в 2024?</div>
+                <div class="list-article__meta">1 нояб 2024 · 9 мин · 👁 15K</div>
+              </div>
+              <span class="list-article__arrow">›</span>
+            </a>
+
+          </div>
+
+          <div class="load-more">
+            <button class="btn btn--secondary" onclick="window.wvShowToast?.('Загружаем ещё статьи...')">
+              Загрузить ещё статьи
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+
+          <!-- Topics -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Темы</div>
+            <div class="topic-tags">
+              <span class="topic-tag">🤖 AI Tools</span>
+              <span class="topic-tag">🛡️ VPN</span>
+              <span class="topic-tag">⚡ Продуктивность</span>
+              <span class="topic-tag">💬 Промпты</span>
+              <span class="topic-tag">💻 Кодинг</span>
+              <span class="topic-tag">⚔️ Сравнения</span>
+              <span class="topic-tag">💡 Скиллы</span>
+              <span class="topic-tag">🔒 Приватность</span>
+              <span class="topic-tag">📣 Маркетинг</span>
+              <span class="topic-tag">🎨 Дизайн</span>
+            </div>
+          </div>
+
+          <!-- Popular -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Самое читаемое</div>
+            <a href="/blog/claude-vs-chatgpt/" class="popular-post">
+              <div class="popular-post__num">1</div>
+              <div>
+                <div class="popular-post__title">Claude vs ChatGPT — кто лучше?</div>
+                <div class="popular-post__views">👁 52K просмотров</div>
+              </div>
+            </a>
+            <a href="/blog/best-ai-tools-2024/" class="popular-post">
+              <div class="popular-post__num">2</div>
+              <div>
+                <div class="popular-post__title">Лучшие AI-инструменты 2024</div>
+                <div class="popular-post__views">👁 45K просмотров</div>
+              </div>
+            </a>
+            <a href="/blog/chatgpt-prompts/" class="popular-post">
+              <div class="popular-post__num">3</div>
+              <div>
+                <div class="popular-post__title">100 лучших промптов для ChatGPT</div>
+                <div class="popular-post__views">👁 38K просмотров</div>
+              </div>
+            </a>
+            <a href="/blog/nordvpn-review/" class="popular-post">
+              <div class="popular-post__num">4</div>
+              <div>
+                <div class="popular-post__title">NordVPN 2024 — обзор редакции</div>
+                <div class="popular-post__views">👁 34K просмотров</div>
+              </div>
+            </a>
+            <a href="/blog/midjourney-prompts/" class="popular-post">
+              <div class="popular-post__num">5</div>
+              <div>
+                <div class="popular-post__title">50 промптов для Midjourney v6</div>
+                <div class="popular-post__views">👁 29K просмотров</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="nl-widget">
+            <div class="nl-widget__icon">📬</div>
+            <div class="nl-widget__title">Рассылка WELVERS</div>
+            <div class="nl-widget__desc">Лучшие статьи и обзоры каждую неделю. Без спама.</div>
+            <form class="nl-widget__form" onsubmit="handleNewsletter(event)">
+              <input type="email" class="nl-widget__input" placeholder="your@email.com" required>
+              <button type="submit" class="btn btn--primary" style="justify-content:center;">Подписаться</button>
+            </form>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+          <p class="footer__brand-desc">Независимые обзоры и рейтинги цифровых сервисов.</p>
+          <div class="footer__social">
+            <a href="https://x.com/welvers" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://t.me/welvers" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+            <a href="https://youtube.com/@welvers" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__columns">
+          <div>
+            <h4 class="footer__col-title">Навигация</h4>
+            <ul class="footer__links">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/ai-tools/">AI Tools</a></li>
+              <li><a href="/vpn/">VPN</a></li>
+              <li><a href="/blog/">Блог</a></li>
+              <li><a href="/comparisons/">Сравнения</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Компания</h4>
+            <ul class="footer__links">
+              <li><a href="/about/">О нас</a></li>
+              <li><a href="/about/">Методология</a></li>
+              <li><a href="/about/">Контакты</a></li>
+              <li><a href="/legal/#affiliate">Партнёрство</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Правовая информация</h4>
+            <ul class="footer__links">
+              <li><a href="/legal/#privacy">Конфиденциальность</a></li>
+              <li><a href="/legal/#terms">Условия</a></li>
+              <li><a href="/legal/#affiliate">Партнёрское раскрытие</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__newsletter-title">Будьте в курсе</h4>
+          <p class="footer__newsletter-desc">Лучшие статьи каждую неделю</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-form__input" placeholder="your@email.com" required>
+            <button type="submit" class="newsletter-form__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2024 Welvers. Все права защищены.</span>
+        <span>Сайт содержит партнёрские ссылки — <a href="/legal/#affiliate" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">подробнее</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog">
+    <p class="cookie-banner__text">Мы используем cookie. <a href="/legal/#cookies">Подробнее</a></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--secondary btn--sm" onclick="dismissCookie()">Нет</button>
+      <button class="btn btn--primary btn--sm" onclick="acceptCookie()">OK</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter articles
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards  = document.querySelectorAll('.article-card[data-cat]');
+    const rows   = document.querySelectorAll('.list-article[data-cat]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const cat = btn.dataset.filter;
+        [...cards, ...rows].forEach(el => {
+          el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

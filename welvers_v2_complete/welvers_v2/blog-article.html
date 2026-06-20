@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Лучшие AI-инструменты для работы в 2024 году — полный разбор ChatGPT, Claude, Midjourney, Cursor и других сервисов.">
+  <meta property="og:title" content="Лучшие AI-инструменты 2024 — Полный разбор | WELVERS">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2024-12-15">
+  <link rel="canonical" href="https://welvers.com/blog/best-ai-tools-2024/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Лучшие AI-инструменты для работы в 2024 году",
+    "datePublished": "2024-12-15",
+    "dateModified": "2024-12-15",
+    "author": {"@type": "Organization", "name": "WELVERS"},
+    "publisher": {"@type": "Organization", "name": "WELVERS", "url": "https://welvers.com"},
+    "description": "Полный разбор лучших AI-сервисов 2024 — ChatGPT, Claude, Midjourney, Cursor и других"
+  }
+  </script>
+
+  <title>Лучшие AI-инструменты для работы в 2024 году | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── Article layout ── */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      padding: 40px 0 80px;
+      align-items: start;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      padding: calc(var(--header-height) + 44px) 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a { color: var(--text-muted); transition: color .2s; }
+    .breadcrumb a:hover { color: var(--text-secondary); }
+
+    .article-header__tags {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .article-tag {
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .article-tag--cat  { background: rgba(96,165,250,.1); color: #60a5fa; border: 1px solid rgba(96,165,250,.2); }
+    .article-tag--type { background: rgba(255,255,255,.05); color: var(--text-muted); border: 1px solid var(--border); }
+
+    .article-header__title {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .article-header__lead {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+
+    .article-header__byline {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .byline__avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .byline__name { font-size: 13px; font-weight: 600; }
+    .byline__role { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+    .byline__meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 14px;
+      margin-left: auto;
+      flex-wrap: wrap;
+    }
+
+    .byline__meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── Hero image ── */
+    .article-hero-image {
+      height: 340px;
+      background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #0f3460 100%);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(8,8,8,.3));
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 36px;
+    }
+
+    .toc__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .toc { counter-reset: toc; }
+
+    .toc__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+      counter-increment: toc;
+    }
+
+    .toc__link:last-child { border-bottom: none; }
+    .toc__link:hover { color: var(--text-primary); }
+
+    .toc__link::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      width: 22px;
+      flex-shrink: 0;
+    }
+
+    /* ── Article body ── */
+    .article-body {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .article-body h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -.02em;
+      margin: 44px 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 28px 0 10px;
+    }
+
+    .article-body p { margin-bottom: 18px; }
+
+    .article-body a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border-hover);
+    }
+
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .article-body ul li {
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .article-body ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    .article-body ol { counter-reset: ol; }
+    .article-body ol li {
+      counter-increment: ol;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .article-body ol li::before {
+      content: counter(ol) '.';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* Tool mention card */
+    .tool-mention {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin: 20px 0;
+      transition: border-color .2s;
+    }
+
+    .tool-mention:hover { border-color: var(--border-hover); }
+
+    .tool-mention__logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .tool-mention__body { flex: 1; min-width: 0; }
+    .tool-mention__name { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
+    .tool-mention__desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .tool-mention__actions { display: flex; gap: 8px; }
+
+    .tool-mention__score {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .tool-mention__score-val { font-size: 22px; font-weight: 800; color: #fbbf24; line-height: 1; }
+    .tool-mention__score-stars { font-size: 12px; color: #fbbf24; }
+
+    /* Callout */
+    .callout {
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin: 20px 0;
+      font-size: 14px;
+      line-height: 1.7;
+      display: flex;
+      gap: 12px;
+    }
+
+    .callout--tip  { background: rgba(96,165,250,.06); border: 1px solid rgba(96,165,250,.2); }
+    .callout--warn { background: rgba(251,191,36,.06); border: 1px solid rgba(251,191,36,.2); }
+    .callout--info { background: rgba(255,255,255,.03); border: 1px solid var(--border); }
+
+    .callout__icon { font-size: 18px; flex-shrink: 0; }
+    .callout__text { color: var(--text-secondary); }
+    .callout__text strong { color: var(--text-primary); }
+
+    /* Comparison mini-table */
+    .mini-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    .mini-table th {
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mini-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+
+    .mini-table tr:last-child td { border-bottom: none; }
+    .mini-table tr:hover td { background: rgba(255,255,255,.015); }
+    .mini-table td:first-child { font-weight: 600; color: var(--text-primary); }
+
+    /* Article tags */
+    .article-footer-tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      padding-top: 28px;
+      margin-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .article-footer-tags a {
+      padding: 5px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      transition: color .2s, border-color .2s;
+    }
+
+    .article-footer-tags a:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
+    /* Share */
+    .article-share {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .share-label { font-size: 13px; color: var(--text-muted); }
+    .share-btn {
+      padding: 8px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      font-family: var(--font);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .share-btn:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
+    /* Related articles */
+    .related-articles { margin-top: 48px; }
+
+    .related-articles__title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color .2s, transform .15s;
+      cursor: pointer;
+    }
+
+    .related-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+    .related-card__thumb {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+
+    .related-card__body { padding: 12px 14px; }
+    .related-card__tag  { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 5px; }
+    .related-card__title { font-size: 13px; font-weight: 500; line-height: 1.4; }
+
+    /* ── Sidebar ── */
+    .article-sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    .sidebar-widget__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* Sticky TOC in sidebar */
+    .sidebar-toc { counter-reset: stoc; }
+
+    .sidebar-toc__link {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 6px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+      counter-increment: stoc;
+      cursor: pointer;
+    }
+
+    .sidebar-toc__link:last-child { border-bottom: none; }
+    .sidebar-toc__link:hover { color: var(--text-primary); }
+    .sidebar-toc__link.is-active { color: var(--text-primary); }
+
+    .sidebar-toc__link::before {
+      content: counter(stoc, decimal-leading-zero);
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* CTA sidebar */
+    .sidebar-cta {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .sidebar-cta__icon  { font-size: 28px; margin-bottom: 10px; }
+    .sidebar-cta__title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .sidebar-cta__desc  { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .article-hero-image { height: 200px; font-size: 52px; }
+    }
+
+    @media (max-width: 400px) {
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/tools/" class="nav__link">Инструменты</a>
+        <a href="/blog/" class="nav__link nav__link--active">Блог</a>
+        <a href="/comparisons/" class="nav__link">Сравнения</a>
+      </nav>
+      <div class="header__actions">
+        <div class="search-bar">
+          <svg class="search-bar__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="search-bar__placeholder">Поиск...</span>
+          <kbd class="search-bar__kbd">⌘K</kbd>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button>
+          <button class="lang-btn" onclick="switchLang('en')">EN</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── ARTICLE HEADER ── -->
+    <div class="article-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <span>›</span>
+          <a href="/blog/">Блог</a>
+          <span>›</span>
+          <span style="color:var(--text-secondary);">AI Tools</span>
+        </nav>
+
+        <div class="article-header__tags">
+          <span class="article-tag article-tag--cat">🤖 AI Tools</span>
+          <span class="article-tag article-tag--type">Подборка</span>
+          <span class="article-tag article-tag--type">⭐ Выбор редакции</span>
+        </div>
+
+        <h1 class="article-header__title">
+          Лучшие AI-инструменты для работы в 2024 году — полный разбор
+        </h1>
+
+        <p class="article-header__lead">
+          Протестировали 30+ AI-сервисов на реальных задачах: текст, код, изображения, исследования. Честный разбор без рекламы — что реально работает, а что переоценено.
+        </p>
+
+        <div class="article-header__byline">
+          <div class="byline__avatar">W</div>
+          <div>
+            <div class="byline__name">Редакция WELVERS</div>
+            <div class="byline__role">Независимые обзоры</div>
+          </div>
+          <div class="byline__meta">
+            <span>📅 15 декабря 2024</span>
+            <span>⏱ 12 мин чтения</span>
+            <span>👁 45K просмотров</span>
+            <span>🔄 Обновлено: декабрь 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BODY ── -->
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Article content -->
+        <article>
+
+          <!-- Hero image -->
+          <div class="article-hero-image">🤖</div>
+
+          <!-- TOC -->
+          <nav class="toc" aria-label="Содержание статьи">
+            <div class="toc__title">Содержание</div>
+            <a href="#intro"       class="toc__link">Введение — почему AI в 2024 это необходимость</a>
+            <a href="#chat"        class="toc__link">Лучшие AI-чат ассистенты</a>
+            <a href="#image"       class="toc__link">Генерация изображений</a>
+            <a href="#code"        class="toc__link">AI для разработчиков</a>
+            <a href="#writing"     class="toc__link">AI для написания текстов</a>
+            <a href="#comparison"  class="toc__link">Быстрое сравнение</a>
+            <a href="#verdict"     class="toc__link">Итоговый вердикт</a>
+          </nav>
+
+          <div class="article-body">
+
+            <h2 id="intro">Введение — почему AI в 2024 это необходимость</h2>
+            <p>Два года назад ChatGPT казался любопытной игрушкой. Сегодня специалисты, не использующие AI-инструменты, работают медленнее и дороже конкурентов. Рынок заполнен сотнями сервисов — но большинство переоценены, дублируют друг друга или просто не работают так, как обещают.</p>
+
+            <p>Мы потратили несколько месяцев, тестируя больше 30 AI-инструментов на реальных рабочих задачах. Вот что получилось — без маркетингового глянца.</p>
+
+            <div class="callout callout--tip">
+              <span class="callout__icon">💡</span>
+              <div class="callout__text"><strong>Главный вывод:</strong> 80% задач большинства специалистов закрывают всего 3–4 инструмента. Не нужно подписываться на всё подряд.</div>
+            </div>
+
+            <!-- CHAT -->
+            <h2 id="chat">Лучшие AI-чат ассистенты</h2>
+            <p>Это самая насыщенная категория. Конкуренция между ChatGPT, Claude и Gemini идёт не по дням, а по часам.</p>
+
+            <div class="tool-mention">
+              <div class="tool-mention__logo" style="background:#10a37f;color:#fff;">G</div>
+              <div class="tool-mention__body">
+                <div class="tool-mention__name">ChatGPT — лучший универсальный ассистент</div>
+                <div class="tool-mention__desc">GPT-4o бесплатно закрывает 80% задач. Мультимодальность, тысячи кастомных GPT, веб-поиск, генерация изображений — всё в одном.</div>
+                <div class="tool-mention__actions">
+                  <a href="/ai-tools/chatgpt/" class="btn btn--secondary btn--sm">Обзор</a>
+                  <a href="https://chat.openai.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm">Попробовать ↗</a>
+                </div>
+              </div>
+              <div class="tool-mention__score">
+                <span class="tool-mention__score-val">4.9</span>
+                <span class="tool-mention__score-stars">★★★★★</span>
+              </div>
+            </div>
+
+            <div class="tool-mention">
+              <div class="tool-mention__logo" style="background:#d97757;color:#fff;">C</div>
+              <div class="tool-mention__body">
+                <div class="tool-mention__name">Claude — лучший для анализа и длинных текстов</div>
+                <div class="tool-mention__desc">200K токенов контекста — можно загрузить целую книгу. Наиболее точен и взвешен в ответах среди всех протестированных моделей.</div>
+                <div class="tool-mention__actions">
+                  <a href="/ai-tools/claude/" class="btn btn--secondary btn--sm">Обзор</a>
+                  <a href="https://claude.ai" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm">Попробовать ↗</a>
+                </div>
+              </div>
+              <div class="tool-mention__score">
+                <span class="tool-mention__score-val">4.8</span>
+                <span class="tool-mention__score-stars">★★★★★</span>
+              </div>
+            </div>
+
+            <div class="callout callout--warn">
+              <span class="callout__icon">⚠️</span>
+              <div class="callout__text"><strong>Важно:</strong> Не используйте AI для конфиденциальных данных клиентов в бесплатных планах — переписки могут участвовать в обучении моделей. Для бизнеса выбирайте корпоративные тарифы.</div>
+            </div>
+
+            <!-- IMAGE -->
+            <h2 id="image">Генерация изображений</h2>
+            <p>Революция в визуальном контенте уже случилась. Вопрос не «стоит ли использовать AI для картинок», а «какой инструмент выбрать под конкретную задачу».</p>
+
+            <div class="tool-mention">
+              <div class="tool-mention__logo" style="background:#1a1a2e;color:#a78bfa;font-size:18px;">✦</div>
+              <div class="tool-mention__body">
+                <div class="tool-mention__name">Midjourney v6 — лучшее качество изображений</div>
+                <div class="tool-mention__desc">Непревзойдённое качество для арта и фотореализма. Работает через Discord. От $10/мес — самое выгодное соотношение цена/качество в категории.</div>
+                <div class="tool-mention__actions">
+                  <a href="/ai-tools/midjourney/" class="btn btn--secondary btn--sm">Обзор</a>
+                  <a href="https://midjourney.com" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm">Сайт ↗</a>
+                </div>
+              </div>
+              <div class="tool-mention__score">
+                <span class="tool-mention__score-val">4.9</span>
+                <span class="tool-mention__score-stars">★★★★★</span>
+              </div>
+            </div>
+
+            <!-- CODE -->
+            <h2 id="code">AI для разработчиков</h2>
+            <p>Кодинг — категория где AI даёт самый ощутимый прирост производительности. Разработчики сообщают об ускорении в 2–5 раз на реальных проектах.</p>
+
+            <div class="tool-mention">
+              <div class="tool-mention__logo" style="background:#1a1a1a;color:#fff;font-size:18px;">⚡</div>
+              <div class="tool-mention__body">
+                <div class="tool-mention__name">Cursor — AI-редактор нового поколения</div>
+                <div class="tool-mention__desc">Fork VSCode с встроенным GPT-4 и Claude. Понимает весь проект, редактирует несколько файлов одновременно. Бесплатный план достаточно щедрый.</div>
+                <div class="tool-mention__actions">
+                  <a href="/ai-tools/cursor/" class="btn btn--secondary btn--sm">Обзор</a>
+                  <a href="https://cursor.sh" target="_blank" rel="nofollow noopener" class="btn btn--secondary btn--sm">Скачать ↗</a>
+                </div>
+              </div>
+              <div class="tool-mention__score">
+                <span class="tool-mention__score-val">4.7</span>
+                <span class="tool-mention__score-stars">★★★★½</span>
+              </div>
+            </div>
+
+            <!-- WRITING -->
+            <h2 id="writing">AI для написания текстов</h2>
+            <p>Контент-маркетологи и копирайтеры получили самый большой выигрыш от AI-революции. Главное — не перепутать «AI как инструмент» с «AI вместо автора».</p>
+
+            <ul>
+              <li><strong>ChatGPT</strong> — лучший универсал, закрывает большинство задач</li>
+              <li><strong>Claude</strong> — длинные материалы, анализ, редактура стиля</li>
+              <li><strong>Jasper</strong> — специализированный маркетинговый копирайтинг</li>
+              <li><strong>Grammarly AI</strong> — редактура и улучшение существующих текстов</li>
+            </ul>
+
+            <!-- COMPARISON TABLE -->
+            <h2 id="comparison">Быстрое сравнение инструментов</h2>
+            <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--border);margin:20px 0;">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th>Инструмент</th>
+                    <th>Категория</th>
+                    <th>Цена</th>
+                    <th>Оценка</th>
+                    <th>Лучше всего для</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ChatGPT</td>
+                    <td>Чат</td>
+                    <td>Бесплатно / $20</td>
+                    <td>⭐ 4.9</td>
+                    <td>Универсальные задачи</td>
+                  </tr>
+                  <tr>
+                    <td>Claude</td>
+                    <td>Чат</td>
+                    <td>Бесплатно / $20</td>
+                    <td>⭐ 4.8</td>
+                    <td>Анализ документов</td>
+                  </tr>
+                  <tr>
+                    <td>Midjourney</td>
+                    <td>Изображения</td>
+                    <td>$10–60/мес</td>
+                    <td>⭐ 4.9</td>
+                    <td>Арт и фотореализм</td>
+                  </tr>
+                  <tr>
+                    <td>Cursor</td>
+                    <td>Кодинг</td>
+                    <td>Бесплатно / $20</td>
+                    <td>⭐ 4.7</td>
+                    <td>Разработка</td>
+                  </tr>
+                  <tr>
+                    <td>Perplexity</td>
+                    <td>Поиск</td>
+                    <td>Бесплатно / $20</td>
+                    <td>⭐ 4.6</td>
+                    <td>Исследования</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- VERDICT -->
+            <h2 id="verdict">Итоговый вердикт</h2>
+            <p>AI-инструменты в 2024 году — это не конкурентное преимущество, а базовый навык. Те, кто откладывает освоение, теряют производительность каждую неделю.</p>
+
+            <p><strong>Минимальный стек для начала:</strong> ChatGPT Free + Claude Free. Этого хватит для большинства задач без каких-либо затрат. Добавляйте инструменты по мере появления конкретных потребностей — не гонитесь за всем сразу.</p>
+
+            <div class="callout callout--info">
+              <span class="callout__icon">📌</span>
+              <div class="callout__text">Не знаете с чего начать? Пройдите наш <a href="/finder/"><strong>квиз-подборщик</strong></a> — ответьте на 5 вопросов и получите персональные рекомендации под ваши задачи и бюджет.</div>
+            </div>
+
+          </div><!-- /article-body -->
+
+          <!-- Tags -->
+          <div class="article-footer-tags">
+            <a href="/blog/tag/ai-tools/">AI Tools</a>
+            <a href="/blog/tag/chatgpt/">ChatGPT</a>
+            <a href="/blog/tag/claude/">Claude</a>
+            <a href="/blog/tag/midjourney/">Midjourney</a>
+            <a href="/blog/tag/productivity/">Продуктивность</a>
+            <a href="/blog/tag/2024/">2024</a>
+          </div>
+
+          <!-- Share -->
+          <div class="article-share">
+            <span class="share-label">Поделиться:</span>
+            <button class="share-btn" onclick="navigator.clipboard?.writeText(location.href);window.wvShowToast?.('Ссылка скопирована!')">
+              🔗 Скопировать ссылку
+            </button>
+            <a href="https://t.me/share/url?url=https://welvers.com/blog/best-ai-tools-2024/" target="_blank" class="share-btn">✈ Telegram</a>
+            <a href="https://twitter.com/intent/tweet?url=https://welvers.com/blog/best-ai-tools-2024/" target="_blank" class="share-btn">𝕏 Twitter</a>
+          </div>
+
+          <!-- Related -->
+          <div class="related-articles">
+            <div class="related-articles__title">Читайте также</div>
+            <div class="related-grid">
+              <a href="/blog/claude-vs-chatgpt/" class="related-card">
+                <div class="related-card__thumb thumb--comparison">⚔️</div>
+                <div class="related-card__body">
+                  <div class="related-card__tag">Сравнение</div>
+                  <div class="related-card__title">Claude vs ChatGPT — кто лучше?</div>
+                </div>
+              </a>
+              <a href="/blog/chatgpt-prompts/" class="related-card">
+                <div class="related-card__thumb thumb--ai">💬</div>
+                <div class="related-card__body">
+                  <div class="related-card__tag">Промпты</div>
+                  <div class="related-card__title">100 лучших промптов для ChatGPT</div>
+                </div>
+              </a>
+              <a href="/blog/ai-coding-workflow/" class="related-card">
+                <div class="related-card__thumb thumb--skills">💻</div>
+                <div class="related-card__body">
+                  <div class="related-card__tag">Скиллы</div>
+                  <div class="related-card__title">AI-воркфлоу для разработчика</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+
+          <!-- TOC -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Содержание</div>
+            <div class="sidebar-toc">
+              <a href="#intro"      class="sidebar-toc__link">Введение</a>
+              <a href="#chat"       class="sidebar-toc__link">Чат-ассистенты</a>
+              <a href="#image"      class="sidebar-toc__link">Изображения</a>
+              <a href="#code"       class="sidebar-toc__link">Кодинг</a>
+              <a href="#writing"    class="sidebar-toc__link">Тексты</a>
+              <a href="#comparison" class="sidebar-toc__link">Сравнение</a>
+              <a href="#verdict"    class="sidebar-toc__link">Вердикт</a>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="sidebar-cta">
+            <div class="sidebar-cta__icon">✨</div>
+            <div class="sidebar-cta__title">Не знаешь что выбрать?</div>
+            <div class="sidebar-cta__desc">Пройди короткий опрос и получи персональные рекомендации</div>
+            <a href="/finder/" class="btn btn--primary" style="width:100%;justify-content:center;">Подобрать инструменты →</a>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget__title">Рассылка</div>
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;line-height:1.6;">Новые статьи и обзоры каждую неделю</p>
+            <form onsubmit="handleNewsletter(event)" style="display:flex;flex-direction:column;gap:8px;">
+              <input type="email" placeholder="your@email.com" required
+                style="padding:9px 12px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-primary);font-size:13px;font-family:var(--font);outline:none;">
+              <button type="submit" class="btn btn--secondary" style="justify-content:center;font-size:13px;">Подписаться</button>
+            </form>
+          </div>
+
+          <!-- Affiliate note -->
+          <div style="font-size:12px;color:var(--text-muted);padding:12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--radius-sm);line-height:1.6;">
+            ℹ️ Статья содержит партнёрские ссылки. <a href="/legal/#affiliate" style="color:var(--text-muted);text-decoration:underline;">Подробнее</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+          <p class="footer__brand-desc">Независимые обзоры и рейтинги цифровых сервисов.</p>
+          <div class="footer__social">
+            <a href="https://x.com/welvers" target="_blank" rel="noopener" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://t.me/welvers" target="_blank" rel="noopener" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+            <a href="https://youtube.com/@welvers" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__columns">
+          <div>
+            <h4 class="footer__col-title">Навигация</h4>
+            <ul class="footer__links">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/ai-tools/">AI Tools</a></li>
+              <li><a href="/vpn/">VPN</a></li>
+              <li><a href="/blog/">Блог</a></li>
+              <li><a href="/comparisons/">Сравнения</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Компания</h4>
+            <ul class="footer__links">
+              <li><a href="/about/">О нас</a></li>
+              <li><a href="/about/">Методология</a></li>
+              <li><a href="/about/">Контакты</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Правовая информация</h4>
+            <ul class="footer__links">
+              <li><a href="/legal/#privacy">Конфиденциальность</a></li>
+              <li><a href="/legal/#terms">Условия</a></li>
+              <li><a href="/legal/#affiliate">Партнёрство</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__newsletter-title">Рассылка</h4>
+          <p class="footer__newsletter-desc">Лучшие статьи каждую неделю</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-form__input" placeholder="your@email.com" required>
+            <button type="submit" class="newsletter-form__btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2024 Welvers. Все права защищены.</span>
+        <span>Сайт содержит партнёрские ссылки — <a href="/legal/#affiliate" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">подробнее</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog">
+    <p class="cookie-banner__text">Мы используем cookie. <a href="/legal/#cookies">Подробнее</a></p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--secondary btn--sm" onclick="dismissCookie()">Нет</button>
+      <button class="btn btn--primary btn--sm" onclick="acceptCookie()">OK</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Highlight active TOC link on scroll
+    const sections = document.querySelectorAll('.article-body h2[id]');
+    const tocLinks = document.querySelectorAll('.sidebar-toc__link');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('is-active'));
+          const active = document.querySelector(`.sidebar-toc__link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

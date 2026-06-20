@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>500 — Ошибка сервера | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .error-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-glow {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(248,113,113,.08) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .error-code {
+      font-size: clamp(96px, 16vw, 168px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      line-height: 1;
+      color: transparent;
+      background: linear-gradient(155deg, #2a2a2a 0%, #111 40%, #2e2e2e 70%, #0d0d0d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-icon {
+      font-size: 44px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 440px;
+      line-height: 1.75;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tech details */
+    .error-details {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      max-width: 480px;
+      width: 100%;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-details__title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .error-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .error-detail-row:last-child { border-bottom: none; }
+    .edr-label { color: var(--text-muted); }
+    .edr-val   { color: var(--text-secondary); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+
+    .error-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #f87171;
+      background: rgba(248,113,113,.1);
+      border: 1px solid rgba(248,113,113,.2);
+      border-radius: 6px;
+      padding: 3px 9px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f87171;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+
+    .retry-timer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .retry-timer span { color: var(--text-secondary); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo">
+        <div class="logo__icon">W</div>
+        <span class="logo__text">WELVERS</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── ERROR CONTENT ── -->
+  <div class="error-wrap">
+    <div class="error-glow"></div>
+
+    <span class="error-icon">⚙️</span>
+    <div class="error-code">500</div>
+    <h1 class="error-title">Ошибка сервера</h1>
+    <p class="error-desc">
+      Что-то пошло не так на нашей стороне. Мы уже знаем об этой проблеме и работаем над её устранением. Попробуйте обновить страницу через несколько минут.
+    </p>
+
+    <div class="error-actions">
+      <button class="btn btn--primary" onclick="location.reload()">
+        ↺ Обновить страницу
+      </button>
+      <a href="/" class="btn btn--secondary">
+        ← На главную
+      </a>
+    </div>
+
+    <div class="error-details">
+      <div class="error-details__title">Технические детали</div>
+      <div class="error-detail-row">
+        <span class="edr-label">Статус</span>
+        <span class="error-status"><span class="status-dot"></span>500 Internal Server Error</span>
+      </div>
+      <div class="error-detail-row">
+        <span class="edr-label">Время</span>
+        <span class="edr-val" id="errorTime">—</span>
+      </div>
+      <div class="error-detail-row">
+        <span class="edr-label">Request ID</span>
+        <span class="edr-val" id="requestId">—</span>
+      </div>
+      <div class="retry-timer">
+        Автообновление через <span id="countdown">30</span> сек
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer style="border-top:1px solid var(--border);padding:20px 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+      <span style="font-size:12px;color:var(--text-muted);">© 2024 Welvers. Все права защищены.</span>
+      <div style="display:flex;gap:16px;">
+        <a href="/about/" style="font-size:12px;color:var(--text-muted);">Контакты</a>
+        <a href="https://status.welvers.com" target="_blank" style="font-size:12px;color:var(--text-muted);">Статус сервиса ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('errorTime').textContent = new Date().toLocaleString('ru-RU');
+    document.getElementById('requestId').textContent = 'req_' + Math.random().toString(36).slice(2, 12).toUpperCase();
+
+    let t = 30;
+    const cd = document.getElementById('countdown');
+    const timer = setInterval(() => {
+      t--;
+      if (cd) cd.textContent = t;
+      if (t <= 0) {
+        clearInterval(timer);
+        location.reload();
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

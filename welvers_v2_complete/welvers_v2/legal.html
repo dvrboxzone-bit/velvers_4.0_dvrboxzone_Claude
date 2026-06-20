@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Правовая информация | WELVERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .legal-layout{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:calc(var(--header-height) + 44px) 0 80px;align-items:start;}
+    .legal-nav{position:sticky;top:calc(var(--header-height) + 24px);background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;}
+    .legal-nav__title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+    .legal-nav__link{display:block;padding:8px 10px;border-radius:var(--radius-sm);font-size:13px;color:var(--text-secondary);transition:all .2s;margin-bottom:2px;cursor:pointer;}
+    .legal-nav__link:hover,.legal-nav__link.is-active{background:rgba(255,255,255,.06);color:var(--text-primary);}
+    .legal-divider{height:1px;background:var(--border);margin:10px 0;}
+    .legal-header{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+    .legal-header__title{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px;}
+    .legal-meta{font-size:13px;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap;}
+    .legal-body h2{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:32px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--text-primary);}
+    .legal-body h3{font-size:15px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+    .legal-body p{font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:14px;}
+    .legal-body ul{margin-bottom:14px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+    .legal-body ul li{font-size:14px;color:var(--text-secondary);padding-left:18px;position:relative;line-height:1.7;}
+    .legal-body ul li::before{content:'—';position:absolute;left:0;color:var(--text-muted);}
+    .legal-body a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px;}
+    .legal-callout{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.18);border-radius:var(--radius-md);padding:16px 18px;margin:18px 0;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+    .legal-callout strong{color:var(--text-primary);}
+    .legal-table-wrap{overflow-x:auto;border-radius:var(--radius-md);border:1px solid var(--border);margin:16px 0;}
+    .legal-table{width:100%;border-collapse:collapse;min-width:480px;}
+    .legal-table th{padding:11px 16px;text-align:left;font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;background:var(--bg-card);border-bottom:1px solid var(--border);}
+    .legal-table td{padding:11px 16px;font-size:13px;color:var(--text-secondary);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+    .legal-table tr:last-child td{border-bottom:none;}
+    .contact-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-top:36px;}
+    .contact-box__title{font-size:15px;font-weight:700;margin-bottom:8px;}
+    .contact-box__text{font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.7;}
+    @media(max-width:768px){.legal-layout{grid-template-columns:1fr}.legal-nav{position:static}}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner" id="header-inner">
+      <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+      <nav class="nav" id="nav">
+        <a href="/" class="nav__link">Главная</a>
+        <a href="/ai-tools/" class="nav__link">AI Tools</a>
+        <a href="/vpn/" class="nav__link">VPN</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switcher"><button class="lang-btn lang-btn--active" onclick="switchLang('ru')">RU</button><button class="lang-btn" onclick="switchLang('en')">EN</button></div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="legal-layout">
+
+        <nav class="legal-nav">
+          <div class="legal-nav__title">Правовые страницы</div>
+          <div class="legal-nav__link is-active" onclick="showPage('privacy',this)">🔒 Конфиденциальность</div>
+          <div class="legal-nav__link" onclick="showPage('terms',this)">📋 Условия использования</div>
+          <div class="legal-nav__link" onclick="showPage('affiliate',this)">🤝 Партнёрское раскрытие</div>
+          <div class="legal-divider"></div>
+          <div class="legal-nav__link" onclick="showPage('cookies',this)">🍪 Cookie Policy</div>
+          <div class="legal-nav__link" onclick="showPage('disclaimer',this)">⚖️ Отказ от ответственности</div>
+          <div class="legal-nav__link" onclick="showPage('dmca',this)">©️ DMCA</div>
+          <div class="legal-nav__link" onclick="showPage('editorial',this)">📰 Редполитика</div>
+        </nav>
+
+        <div>
+
+          <!-- PRIVACY -->
+          <div id="page-privacy" class="legal-page">
+            <div class="legal-header">
+              <h1 class="legal-header__title">Политика конфиденциальности</h1>
+              <div class="legal-meta"><span>📅 Действует с: 1 января 2024</span><span>🔄 Обновлено: декабрь 2024</span></div>
+            </div>
+            <div class="legal-body">
+              <div class="legal-callout"><strong>Кратко:</strong> Мы собираем минимум данных необходимых для работы сайта. Мы не продаём ваши данные. Вы можете запросить удаление своих данных в любое время.</div>
+
+              <h2>1. Кто мы</h2>
+              <p>Welvers («мы», «нас», «наш») — независимая платформа обзоров цифровых инструментов, расположенная по адресу welvers.com. Мы являемся контролёром данных в отношении информации, собранной через этот сайт.</p>
+
+              <h2>2. Какие данные мы собираем</h2>
+              <h3>2.1 Данные, которые вы предоставляете</h3>
+              <ul>
+                <li>Email-адрес при подписке на рассылку</li>
+                <li>Имя и email при отправке контактной формы</li>
+                <li>Любые данные, которые вы добровольно предоставляете в переписке</li>
+              </ul>
+              <h3>2.2 Данные, собираемые автоматически</h3>
+              <ul>
+                <li>IP-адрес и приблизительное географическое положение</li>
+                <li>Тип браузера и операционная система</li>
+                <li>Страницы, которые вы посещаете, и время визита</li>
+                <li>Cookie (см. раздел Cookie Policy)</li>
+              </ul>
+
+              <h2>3. Как мы используем данные</h2>
+              <div class="legal-table-wrap">
+                <table class="legal-table">
+                  <thead><tr><th>Цель</th><th>Правовое основание</th><th>Срок хранения</th></tr></thead>
+                  <tbody>
+                    <tr><td>Отправка рассылки</td><td>Согласие</td><td>До отписки</td></tr>
+                    <tr><td>Ответ на запросы</td><td>Законный интерес</td><td>3 года</td></tr>
+                    <tr><td>Аналитика сайта</td><td>Законный интерес</td><td>26 месяцев</td></tr>
+                    <tr><td>Безопасность</td><td>Законный интерес</td><td>90 дней</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>4. Партнёрские ссылки и третьи стороны</h2>
+              <p>Наш сайт содержит партнёрские ссылки на внешние сервисы. При переходе по таким ссылкам применяется политика конфиденциальности соответствующего сервиса. Мы используем Google Analytics (аналитика) и Vercel/Cloudflare (хостинг, CDN).</p>
+
+              <h2>5. Ваши права</h2>
+              <ul>
+                <li>Доступ к своим персональным данным</li>
+                <li>Исправление неточных данных</li>
+                <li>Удаление данных («право на забвение»)</li>
+                <li>Ограничение обработки и возражение против неё</li>
+                <li>Переносимость данных</li>
+              </ul>
+              <p>Для реализации прав напишите на <a href="mailto:privacy@welvers.com">privacy@welvers.com</a></p>
+
+              <h2>6. Изменения политики</h2>
+              <p>Мы оставляем за собой право изменять эту политику. При существенных изменениях уведомим подписчиков по email.</p>
+
+              <div class="contact-box">
+                <div class="contact-box__title">📧 Вопросы о конфиденциальности</div>
+                <div class="contact-box__text">По всем вопросам обработки персональных данных обращайтесь:</div>
+                <a href="mailto:privacy@welvers.com" class="btn btn--secondary btn--sm">privacy@welvers.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- TERMS -->
+          <div id="page-terms" class="legal-page" style="display:none;">
+            <div class="legal-header">
+              <h1 class="legal-header__title">Условия использования</h1>
+              <div class="legal-meta"><span>📅 Действует с: 1 января 2024</span><span>🔄 Обновлено: декабрь 2024</span></div>
+            </div>
+            <div class="legal-body">
+              <div class="legal-callout"><strong>Кратко:</strong> Используя наш сайт, вы соглашаетесь с этими условиями. Контент защищён авторским правом. Партнёрские ссылки раскрыты. Минимальный возраст — 18 лет.</div>
+
+              <h2>1. Принятие условий</h2>
+              <p>Используя сайт welvers.com, вы подтверждаете, что прочитали, поняли и соглашаетесь с данными Условиями использования.</p>
+
+              <h2>2. Возрастные ограничения</h2>
+              <p>Использование сайта разрешено лицам не моложе 18 лет. Лица младше 18 лет могут использовать сайт только под надзором родителей или законных представителей.</p>
+
+              <h2>3. Интеллектуальная собственность</h2>
+              <p>Весь контент на welvers.com — включая тексты, изображения, логотипы, дизайн — является собственностью WELVERS или лицензирован нами. Разрешается цитировать не более 150 слов из наших материалов при условии указания источника с активной ссылкой на оригинал.</p>
+
+              <h2>4. Партнёрские отношения</h2>
+              <p>Наш сайт участвует в партнёрских программах. Некоторые ссылки являются партнёрскими — мы получаем комиссию при покупке без дополнительных затрат для вас. Подробнее в разделе «Партнёрское раскрытие».</p>
+
+              <h2>5. Точность информации</h2>
+              <p>Мы стремимся поддерживать актуальность обзоров и цен. Однако условия сервисов могут изменяться. Всегда проверяйте актуальную информацию на сайте соответствующего сервиса перед принятием решений о покупке.</p>
+
+              <h2>6. Ограничение ответственности</h2>
+              <p>WELVERS не несёт ответственности за любые убытки, возникшие в результате использования информации на нашем сайте или приобретения рекомендованных продуктов. Вся информация носит информационный характер.</p>
+            </div>
+          </div>
+
+          <!-- AFFILIATE -->
+          <div id="page-affiliate" class="legal-page" style="display:none;">
+            <div class="legal-header">
+              <h1 class="legal-header__title">Партнёрское раскрытие</h1>
+              <div class="legal-meta"><span>📅 Действует с: 1 января 2024</span></div>
+            </div>
+            <div class="legal-body">
+              <div class="legal-callout"><strong>Суть:</strong> Некоторые ссылки на нашем сайте являются партнёрскими. Если вы перейдёте по такой ссылке и совершите покупку, мы получим комиссию. Это не влияет на наши оценки — мы писали низкие обзоры на партнёрские продукты и будем делать это в будущем.</div>
+
+              <h2>Что такое партнёрские ссылки</h2>
+              <p>Партнёрская ссылка — это специальная ссылка с отслеживающим кодом, которая позволяет нам получать небольшое вознаграждение, когда вы переходите по ней и совершаете покупку. Для вас цена остаётся такой же или ниже — за счёт скидок для наших читателей.</p>
+
+              <h2>Как это работает на нашем сайте</h2>
+              <ul>
+                <li>Партнёрские ссылки помечены атрибутами <code>rel="nofollow noopener"</code></li>
+                <li>В материалах с партнёрскими ссылками есть уведомление об аффилиации</li>
+                <li>Партнёрские отношения не влияют на порядок в рейтингах и оценки</li>
+                <li>Мы отказались от партнёрства с сервисами, которые считаем некачественными</li>
+              </ul>
+
+              <h2>Наши партнёры</h2>
+              <div class="legal-table-wrap">
+                <table class="legal-table">
+                  <thead><tr><th>Категория</th><th>Партнёры</th><th>Тип вознаграждения</th></tr></thead>
+                  <tbody>
+                    <tr><td>AI-инструменты</td><td>OpenAI, Anthropic, Jasper, Midjourney</td><td>CPS (с продажи)</td></tr>
+                    <tr><td>VPN-сервисы</td><td>NordVPN, ExpressVPN, Surfshark</td><td>CPS + rev-share</td></tr>
+                    <tr><td>SaaS-продукты</td><td>Notion, ClickUp, Grammarly</td><td>CPS</td></tr>
+                    <tr><td>Хостинг</td><td>Vercel, Cloudflare</td><td>CPS</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>Наши принципы</h2>
+              <ul>
+                <li><strong>Независимость оценок.</strong> Партнёрский статус не влияет на оценку или положение в рейтинге.</li>
+                <li><strong>Прозрачность.</strong> Мы всегда указываем на партнёрские ссылки.</li>
+                <li><strong>Честность.</strong> Публиковали низкие оценки партнёрских продуктов и будем продолжать.</li>
+                <li><strong>Избирательность.</strong> Работаем только с продуктами, которые считаем достойными рекомендации.</li>
+              </ul>
+
+              <div class="contact-box">
+                <div class="contact-box__title">🤝 Партнёрство и сотрудничество</div>
+                <div class="contact-box__text">Хотите предложить продукт для обзора или обсудить партнёрство?</div>
+                <a href="mailto:partners@welvers.com" class="btn btn--secondary btn--sm">partners@welvers.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- COOKIES -->
+          <div id="page-cookies" class="legal-page" style="display:none;">
+            <div class="legal-header"><h1 class="legal-header__title">Cookie Policy</h1><div class="legal-meta"><span>📅 Обновлено: декабрь 2024</span></div></div>
+            <div class="legal-body">
+              <h2>Что такое cookie</h2>
+              <p>Cookie — небольшие текстовые файлы, которые сохраняются в вашем браузере при посещении сайта. Мы используем cookie для обеспечения работы сайта и улучшения пользовательского опыта.</p>
+              <h2>Какие cookie мы используем</h2>
+              <div class="legal-table-wrap">
+                <table class="legal-table">
+                  <thead><tr><th>Тип</th><th>Назначение</th><th>Срок</th></tr></thead>
+                  <tbody>
+                    <tr><td>Необходимые</td><td>Настройки языка, темы</td><td>Сессия</td></tr>
+                    <tr><td>Аналитические</td><td>Google Analytics</td><td>26 мес</td></tr>
+                    <tr><td>Функциональные</td><td>Запоминают предпочтения</td><td>1 год</td></tr>
+                    <tr><td>Партнёрские</td><td>Отслеживание переходов</td><td>30–90 дней</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h2>Управление cookie</h2>
+              <p>Вы можете отключить cookie в настройках браузера. Обратите внимание, что отключение может повлиять на работу некоторых функций сайта.</p>
+            </div>
+          </div>
+
+          <!-- DISCLAIMER -->
+          <div id="page-disclaimer" class="legal-page" style="display:none;">
+            <div class="legal-header"><h1 class="legal-header__title">Отказ от ответственности</h1><div class="legal-meta"><span>📅 Обновлено: декабрь 2024</span></div></div>
+            <div class="legal-body">
+              <h2>Характер информации</h2>
+              <p>Весь контент на welvers.com носит исключительно информационный характер. Мы не являемся юридической, финансовой или технической службой поддержки.</p>
+              <h2>Точность обзоров</h2>
+              <p>Мы стремимся поддерживать актуальность обзоров. Однако функции, цены и условия сервисов постоянно изменяются. Проверяйте актуальную информацию на официальных сайтах перед принятием решений.</p>
+              <h2>Внешние ссылки</h2>
+              <p>Наш сайт содержит ссылки на внешние ресурсы. Мы не несём ответственности за содержимое внешних сайтов и их политику конфиденциальности.</p>
+              <h2>Ограничение ответственности</h2>
+              <p>В максимальной степени, допустимой применимым законодательством, WELVERS не несёт ответственности за убытки, возникшие в результате использования нашего сайта.</p>
+            </div>
+          </div>
+
+          <!-- DMCA -->
+          <div id="page-dmca" class="legal-page" style="display:none;">
+            <div class="legal-header"><h1 class="legal-header__title">DMCA Policy</h1><div class="legal-meta"><span>📅 Обновлено: декабрь 2024</span></div></div>
+            <div class="legal-body">
+              <h2>Уважение к авторским правам</h2>
+              <p>WELVERS уважает права интеллектуальной собственности и ожидает того же от своих пользователей.</p>
+              <h2>Как подать уведомление о нарушении</h2>
+              <p>Отправьте уведомление на <a href="mailto:dmca@welvers.com">dmca@welvers.com</a> со следующей информацией:</p>
+              <ul>
+                <li>Описание защищённого авторским правом произведения</li>
+                <li>URL страницы с предположительно нарушающим контентом</li>
+                <li>Ваши контактные данные</li>
+                <li>Заявление о добросовестности убеждения</li>
+                <li>Электронная подпись правообладателя</li>
+              </ul>
+              <p>Мы рассмотрим уведомление в течение 72 часов и примем необходимые меры.</p>
+            </div>
+          </div>
+
+          <!-- EDITORIAL -->
+          <div id="page-editorial" class="legal-page" style="display:none;">
+            <div class="legal-header"><h1 class="legal-header__title">Редакционная политика</h1><div class="legal-meta"><span>📅 Обновлено: декабрь 2024</span></div></div>
+            <div class="legal-body">
+              <h2>Наш редакционный стандарт</h2>
+              <p>WELVERS придерживается принципов независимой журналистики. Все обзоры основаны на реальном практическом тестировании. Редакторы не принимают вознаграждений за положительные отзывы.</p>
+              <h2>Процесс создания обзоров</h2>
+              <ul>
+                <li><strong>Тестирование:</strong> каждый инструмент тестируется минимум 2 недели на реальных задачах</li>
+                <li><strong>Стандартизация:</strong> единая методология оценки для всей категории</li>
+                <li><strong>Проверка:</strong> обзоры проходят редакторскую проверку перед публикацией</li>
+                <li><strong>Обновление:</strong> регулярно обновляем обзоры при значительных изменениях продукта</li>
+              </ul>
+              <h2>AI-контент</h2>
+              <p>Некоторые материалы создаются или редактируются с использованием AI-инструментов. Такой материал всегда проходит проверку живым редактором.</p>
+              <h2>Исправление ошибок</h2>
+              <p>Если вы нашли ошибку в наших материалах, напишите на <a href="mailto:editorial@welvers.com">editorial@welvers.com</a>. Подтверждённые ошибки исправляем с указанием даты исправления.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;padding-top:0;justify-content:flex-start;gap:24px;flex-wrap:wrap;">
+        <a href="/" class="logo"><div class="logo__icon">W</div><span class="logo__text">WELVERS</span></a>
+        <a href="/ai-tools/" style="font-size:13px;color:var(--text-secondary);">AI Tools</a>
+        <a href="/vpn/" style="font-size:13px;color:var(--text-secondary);">VPN</a>
+        <a href="/blog/" style="font-size:13px;color:var(--text-secondary);">Блог</a>
+      </div>
+      <div class="footer__bottom"><span>© 2024 Welvers. Все права защищены.</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function showPage(id, linkEl) {
+      document.querySelectorAll('.legal-page').forEach(p => p.style.display = 'none');
+      document.getElementById('page-' + id).style.display = 'block';
+      document.querySelectorAll('.legal-nav__link').forEach(l => l.classList.remove('is-active'));
+      if (linkEl) linkEl.classList.add('is-active');
+      const names = {
+        privacy: 'Политика конфиденциальности', terms: 'Условия использования', affiliate: 'Партнёрское раскрытие',
+        cookies: 'Cookie Policy', disclaimer: 'Отказ от ответственности', dmca: 'DMCA', editorial: 'Редакционная политика'
+      };
+      document.title = (names[id] || id) + ' | WELVERS';
+      history.pushState(null, '', '#' + id);
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    const hash = location.hash.slice(1);
+    if (hash && document.getElementById('page-' + hash)) {
+      const link = [...document.querySelectorAll('.legal-nav__link')].find(l => l.getAttribute('onclick')?.includes(`'${hash}'`));
+      showPage(hash, link);
+    }
+  </script>
+</body>
+</html>
